@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>产后护理移动</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="http://47.56.105.7/static/lr/css/bootstrap.min.css" />
+    <script  href="http://47.56.105.7/static/assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+    <style type="text/css">
+
+
+        label {
+            color: #828282
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        label {
+            font-size: 10px;
+            color: #777978;
+        }
+
+        span {
+            color: red;
+        }
+
+        label {
+            /*font-size: 26px;*/
+            color: #000;
+            display: inline-block;
+        }
+        .inputText{
+            border-left-width:0px;
+            border-top-width:0px;
+            border-right-width:0px;
+            width:90%;
+            height:45px;
+            margin-top: -20px;
+        }
+        input::-webkit-input-placeholder{
+            color: #bfc7ca;
+        }
+        .fromTable label{
+            font-size: 20px;
+        }
+        .fromTable label input{
+            width: 20px;
+            height: 20px;
+        }
+        img { height: auto; width: auto\9; width:100%; }
+    </style>
+
+
+</head>
+
+<body>
+<div class="login-box" id="app" style="">
+    <div class="login-box-body">
+
+        <img src="http://47.56.105.7:8914/static/chanhou/img/phonechanhoutop.jpg"/>
+
+        <div style="width: 100%;margin: auto;text-align:center;" id="Table" >
+            <h4 style="color: #fff">获取更多加盟资料</h4>
+                <div  class="fromTable" >
+                    <p style="float: left;padding-left: 30px">您的姓名<span>*</span></p>
+                    <input type="text" name="name" id="name" class="inputText" placeholder="请输入" />
+                    <br /><br />
+                    <p style="float: left;padding-left: 30px">您的电话<span>*</span></p>
+                    <input type="text" name="phone" id="phone" class="inputText" placeholder="请输入" />
+                    <br />
+
+                    <div class="form-group">
+                        <p align="left" style="padding-left: 30px">您所在的城市<span>*</span></p>
+                        <select name="" class="form-control email" style="display: inline-block;width: 45%;" id="prov" onchange="showCity(this)">
+                            <option value="">请选择省份</option>
+                        </select>
+                        <input type="hidden" name="province" id="provName" />
+                        <select name="" class="form-control email" style="display: inline-block;width: 45%;" id="city"  onchange="showCountry(this)">
+                            <option value="">请选择城市</option>
+                        </select>
+                        <input type="hidden" name="city" id="cityName" />
+                    </div>
+
+                    <p align="left" style="padding-left: 30px">您预计投资的金额（单选）<span style="color: #f20000">*</span></p>
+                    <label style="float: left;;padding-left: 5%"><input name="money" type="radio" value="50-70万" />50-70万 </label>
+                    <label><input name="money" type="radio" value="70-100万" />70-100万</label>
+                    <br />
+                    <label style="float: left;;padding-left: 5%"><input name="money" type="radio" value="100万以上" />100万以上</label>
+                    <br />
+                    <input type="submit" style="margin-top: 20px; background:#ff363b; width:80%;height:40px;font-size:15px;border-radius:15px;color: #ffffff" onclick="submitFrom()" value="点击提交获取详细加盟资料"/>
+                </div>
+
+        </div>
+
+
+        <img src="http://47.56.105.7:8914/static/chanhou/img/phonechanhouleft.jpg"/>
+
+
+        <div style="width: 100%;margin: auto;text-align:center;" id="Table1" >
+            <h4 style="color: #fff">获取更多加盟资料</h4>
+            <div  class="fromTable" >
+                <p style="float: left;padding-left: 30px">您的姓名<span>*</span></p>
+                <input type="text" name="name" id="name1" class="inputText" placeholder="请输入" />
+                <br /><br />
+                <p style="float: left;padding-left: 30px">您的电话<span>*</span></p>
+                <input type="text" name="phone" id="phone1" class="inputText" placeholder="请输入" />
+                <br />
+
+                <div class="form-group">
+                    <p align="left" style="padding-left: 30px">您所在的城市<span>*</span></p>
+                    <select name="" class="form-control email" style="display: inline-block;width: 45%;" id="prov1" onchange="showCity1(this)">
+                        <option value="">请选择省份</option>
+                    </select>
+                    <input type="hidden" name="province" id="provName1" />
+                    <select name="" class="form-control email" style="display: inline-block;width: 45%;" id="city1"  onchange="showCountry1(this)">
+                        <option value="">请选择城市</option>
+                    </select>
+                    <input type="hidden" name="city" id="cityName1" />
+                </div>
+
+                <p align="left" style="padding-left: 30px">您预计投资的金额（单选）<span style="color: #f20000">*</span></p>
+                <label style="float: left;;padding-left: 5%"><input name="money1" type="radio" value="50-70万" />50-70万 </label>
+                <label><input name="money1" type="radio" value="70-100万" />70-100万</label>
+                <br />
+                <label style="float: left;;padding-left: 5%"><input name="money1" type="radio" value="100万以上" />100万以上</label>
+                <br />
+                <input type="submit" style="margin-top: 20px; background:#ff363b; width:80%;height:40px;font-size:15px;border-radius:15px;color: #ffffff" onclick="submitFrom1()" value="点击提交获取详细加盟资料"/>
+            </div>
+
+        </div>
+
+        <img src="http://47.56.105.7:8914/static/chanhou/img/phonechanhoubuttom.jpg"/>
+    </div>
+
+
+</div>
+<script>(function() {var _53code = document.createElement("script");_53code.src = "https://tb.53kf.com/code/code/10046286/1";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(_53code, s);})();</script>
+<script src="http://47.56.105.7/static/assets/js/jquery.min.js"></script>
+<script src="../../../static/lr/js/city.js"></script>
+<script src="../../../static/lr/js/method.js"></script>
+<script src="../../../static/lr/js/method1.js"></script>
+<script>
+    function submitFrom() {
+        var name = $("#name").val();
+        var phone = $("#phone").val();
+        var money = $("input[name='money']:checked").val();
+
+        var provName = $("#provName").val();
+        var cityName = $("#cityName").val();
+        if(name == null || name.length ==0){
+            alert("请输入姓名");return;
+        }
+        if(phone == null || phone.length ==0){
+            alert("请输入手机号");return;
+        }
+        if(money == null || money.length ==0){
+            alert("请选择金额");  return;
+        }
+        if(provName == null || provName.length ==0){
+            alert("请选择省"); return;
+        }
+        if(cityName == null || cityName.length ==0){
+            alert("请选择市"); return;
+        }
+
+        // Ajax提交数据
+        $.ajax({
+            url: "http://47.56.105.7/hr/chanhou/submit",
+           // url: "http://localhost/hr/chanhou02/submit",
+            type: "post",    // 提交方式
+            data: {"name": name, "phone": phone,"isPc":0,"money":money,"provice":provName,"city":cityName},
+            dataType: "json",
+            success: function (data) {
+                if(!(data.indexOf("已经提交过") == -1)){
+                    window._agl && window._agl.push(['track', ['success', {t: 3}]])
+                }
+                alert(data);
+            },error(data){
+                if(!(data.responseText.indexOf("已经提交过") == -1)){
+                    window._agl && window._agl.push(['track', ['success', {t: 3}]])
+                }
+                alert(data.responseText);
+            }
+        });
+    }
+
+    function submitFrom1() {
+        var name = $("#name1").val();
+        var phone = $("#phone1").val();
+        var money = $("input[name='money1']:checked").val();
+
+        var provName = $("#provName1").val();
+        var cityName = $("#cityName1").val();
+
+        if(name == null || name.length ==0){
+            alert("请输入姓名");return;
+        }
+        if(phone == null || phone.length ==0){
+            alert("请输入手机号");return;
+        }
+        if(money == null || money.length ==0){
+            alert("请选择金额");  return;
+        }
+        if(provName == null || provName.length ==0){
+            alert("请选择省"); return;
+        }
+        if(cityName == null || cityName.length ==0){
+            alert("请选择市"); return;
+        }
+
+        // Ajax提交数据
+        $.ajax({
+            url: "http://47.56.105.7/hr/chanhou/submit",
+            // url: "http://localhost/hr/chanhou02/submit",
+            type: "post",    // 提交方式
+            data: {"name": name, "phone": phone,"isPc":0,"money":money,"provice":provName,"city":cityName},
+            dataType: "json",
+            success: function (data) {
+                if(!(data.indexOf("已经提交过") == -1)){
+                    window._agl && window._agl.push(['track', ['success', {t: 3}]])
+                }
+                alert(data);
+            },error(data){
+                if(!(data.responseText.indexOf("已经提交过") == -1)){
+                    window._agl && window._agl.push(['track', ['success', {t: 3}]])
+                }
+                alert(data.responseText);
+            }
+        });
+    }
+
+    function focu() {
+        document.querySelector("#Table").scrollIntoView();
+    }
+</script>
+
+
+<script href="http://47.56.105.7/static/lr/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script href="http://47.56.105.7/static/lr/js/popper.min.js"></script>
+<script href="http://47.56.105.7/static/lr/js/city.js"></script>
+<script href="http://47.56.105.7/static/lr/js/method.js"></script>
+<script href="http://47.56.105.7/static/lr/js/method1.js"></script>
+</body>
+
+</html>

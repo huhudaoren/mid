@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>一碗招牌牛肉粉</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="http://47.56.105.7/static/lr/css/bootstrap.min.css" />
+    <script  href="http://47.56.105.7/static/assets/js/jquery.min.js"type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link href="https://vip.media-linkage.com/template/controls/35/wap/rest.css" rel="stylesheet" type="text/css">
+    <link href="https://vip.media-linkage.com/template/controls/1/wap/lyb_style.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+
+
+        label {
+            color: #828282
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        label {
+            font-size: 10px;
+            color: #777978;
+        }
+
+        span {
+            color: red;
+        }
+
+
+        label {
+            /*font-size: 26px;*/
+            color: #000;
+            display: inline-block;
+        }
+        .inputText{
+            border-left-width:0px;
+            border-top-width:0px;
+            border-right-width:0px;
+            width:70%; height:45px;
+        }
+        input::-webkit-input-placeholder{
+            color:#666666;
+        }
+        .footercopy {
+            font-size: 12px;
+            color: #666666;
+            line-height: 20px;
+            text-align: center;
+            margin-top: 7px;
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="login-box" id="app" >
+    <div class="login-box-body">
+
+
+        <img src="http://47.56.105.7:8914/static/niuroufen/img/niuroufenPhoneTop.jpg" alt="" width="100%"/>
+<!--        <div style="height: 186px;width: 100%;margin: auto;text-align:center;" id="Table1" >-->
+
+<!--            <div>-->
+<!--                <p style="color: #000000;margin-bottom: 0;">我对此项目感兴趣,<span>留言索要资料</span></p>-->
+<!--                <label style="font-size: 17px">姓名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="text" name="name" id="nam1e" class="inputText" placeholder="轻输入您的姓名（必填）" />-->
+<!--                <label style="font-size: 17px">手机&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="text" name="phone" id="phone1" class="inputText" placeholder="轻输入您的手机号（必填）" />-->
+<!--&lt;!&ndash;                <br />&ndash;&gt;-->
+<!--&lt;!&ndash;                <label style="font-size: 17px">留言&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="text" name="phone" id="beizhu1" class="inputText" placeholder="我感兴趣，请来电告知加盟细节。" />&ndash;&gt;-->
+<!--                <input type="hidden" name="isPc" id="isPc1" value="0" />-->
+<!--                <input type="submit" style="margin-top: 20px; background:#DD2727; width:80%;height:40px;font-size:15px;" onclick="submitFrom1()" value="提交"/>-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash; 引入提交 &ndash;&gt;-->
+<!--        </div>-->
+
+        <section class="red96_new_lyb" id="message">
+            <h2><img src="https://vip.media-linkage.com/template/guestbook/1/new_lyb_icon.png">我对此项目感兴趣，<span>留言索要资料</span></h2>
+
+                <input type="hidden" name="regroup" id="regroup" value="c5924c07cc52e30b832b0111d4fff8b62e1778911c935267d7abecb060acf533b8dee9961a18c87922e14437d9847d121752b2b570e5554b0471aa1f57a5dc3ePfoH1J/e0WKPIC2SCJdbzUuj4a6ZQIE1RyibnnfnKoZM4whv9c6QwVSlj2fR0DAS1IgVzMRYrGdgwukS6fmmHPtu2rYedqQvgi1TAFqtuLapzT6qej9Z1UYyknX6hvQr">
+                <div class="red96_bai_box mt10">
+                    <p class="red96_bor_b"><label>姓名</label><input type="text" class="red96_inp_text" placeholder="请输入您的姓名（必填）" name="name" id="name1" required=""></p>
+                    <p><label>手机</label><input type="text" class="red96_inp_text" placeholder="请输入您的手机号码（必填）" name="mobile" id="phone1"></p>
+                    <p><label>留言</label><input type="text" class="red96_inp_text" placeholder="我感兴趣，请来电告知加盟细节。" name="beizhu" id="beizhu1"></p>
+                </div>
+                <div class="red96_bai_box red96_mt10">
+                </div>
+
+                <input type="hidden" name="hverification" id="hverification" value="b6ec71efcb2eab69473b006bbfde5c9bac2efa18d441bf8eac07b1c81488a051cd0d15bd47e1dc43a225aaa965abd368832d07e77418af6da9545104cce4533beDRgNArXOP2PgPUZiohsxO2T79kCtuiOV6+gz81FRf0jV7U09sjIzDrOWhcvtqHLdBavBJs9BbN2YPZg8vhqayPHLHNCyQvMJQ102cWT/pz1PxqER0E7zGwLFyq2efMYn3i2d9uhLbj22MWC92btnLiDSRcdqxaNQGvGF7Epq5LY3EbZJuaF8GLpOswhPlyh1Sio96DaHSUhy2Uz3PvC3PET1gJ1zCBbuTRF8Xq86kVMSHwlxCAd/6Dix2NvtLAcm4oOnWpf+Y0PaUo9GsfPzA==">
+                <input type="hidden" name="refurl" id="refurl" value="">
+                <input type="hidden" name="visitid" id="visitid" value="198483">
+                <input type="hidden" name="uuid" id="uuid" value="9E2BA505-C556-01F8-2670-72A56C7D5A64">
+                <div class="red96_sub_box">
+                    <input type="submit" class="red96_inp_sub" onclick="submitFrom1()" value="提交"/>
+                </div>
+
+        </section>
+
+        <img src="http://47.56.105.7:8914/static/niuroufen/img/niuroufenPhoneBody.jpg" alt="" width="100%"/>
+        <section class="red96_new_lyb" id="message">
+            <h2><img src="https://vip.media-linkage.com/template/guestbook/1/new_lyb_icon.png">我对此项目感兴趣，<span>留言索要资料</span></h2>
+
+            <input type="hidden" name="regroup" id="regroup" value="c5924c07cc52e30b832b0111d4fff8b62e1778911c935267d7abecb060acf533b8dee9961a18c87922e14437d9847d121752b2b570e5554b0471aa1f57a5dc3ePfoH1J/e0WKPIC2SCJdbzUuj4a6ZQIE1RyibnnfnKoZM4whv9c6QwVSlj2fR0DAS1IgVzMRYrGdgwukS6fmmHPtu2rYedqQvgi1TAFqtuLapzT6qej9Z1UYyknX6hvQr">
+            <div class="red96_bai_box mt10">
+                <p class="red96_bor_b"><label>姓名</label><input type="text" class="red96_inp_text" placeholder="请输入您的姓名（必填）" name="name" id="name" required=""></p>
+                <p><label>手机</label><input type="text" class="red96_inp_text" placeholder="请输入您的手机号码（必填）" name="mobile" id="phone"></p>
+                <p><label>留言</label><input type="text" class="red96_inp_text" placeholder="我感兴趣，请来电告知加盟细节。" name="beizhu" id="beizhu"></p>
+            </div>
+            <div class="red96_bai_box red96_mt10">
+            </div>
+
+            <div class="red96_sub_box">
+                <input type="submit" class="red96_inp_sub" onclick="submitFrom()" value="提交"/>
+            </div>
+
+        </section>
+<!--        <div style="height: 186px;width: 100%;margin: auto;text-align:center;" id="Table" >-->
+
+<!--                <div>-->
+<!--                    <p style="color: #000000;margin-bottom: 0;">我对此项目感兴趣,<span>留言索要资料</span></p>-->
+<!--                    <label style="font-size: 17px">姓名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="text" name="name" id="name" class="inputText" placeholder="轻输入您的姓名（必填）" />-->
+<!--                    <label style="font-size: 17px">手机&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="text" name="phone" id="phone" class="inputText" placeholder="轻输入您的手机号（必填）" />-->
+
+<!--&lt;!&ndash;                    <label style="font-size: 17px">留言&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="text" name="phone" id="beizhu" class="inputText" placeholder="我感兴趣，请来电告知加盟细节。" />&ndash;&gt;-->
+<!--                    <input type="hidden" name="isPc" id="isPc" value="0" />-->
+<!--                    <input type="submit" style="margin-top: 20px; background:#DD2727; width:80%;height:40px;font-size:15px;" onclick="submitFrom()" value="提交"/>-->
+<!--                </div>-->
+
+<!--            &lt;!&ndash; 引入提交 &ndash;&gt;-->
+<!--        </div>-->
+        <div class="footercopy">版权：智数互动科技（深圳）有限公司  投资有风险需谨慎</div>
+        <div class="footercopy"> Copyright &#169; 智数互动科技(深圳)有限公司  </div>
+<!--        <img src="http://47.56.105.7:8914/static/phoneF.jpg"  alt="" width="100%"/>-->
+    </div>
+
+
+</div>
+
+
+
+<input type="hidden" th:value="${msg}" id="msg">
+
+
+<script>(function() {var _53code = document.createElement("script");_53code.src = "https://tb.53kf.com/code/code/593c6c3a360a02cd8b2d2ccfa25f771d8/1";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(_53code, s);})();</script>
+<script src="http://47.56.105.7/static/assets/js/jquery.min.js"></script>
+<script>
+    function submitFrom() {
+
+        var name = $("#name").val();    // 获取id为username的<input>框数据
+        var phone = $("#phone").val();    // 获取id为password的<input>框数据
+        var beizhu = $("#beizhu").val();
+        // Ajax提交数据
+        $.ajax({
+            url: "http://47.56.105.7/hr/niuroufen/submit",    // 提交到controller的url路径
+            type: "post",    // 提交方式
+            data: {"name": name, "phone": phone,"beizhu":beizhu,"isPc":0},  // data为String类型，必须为 Key/Value 格式。
+            dataType: "json",    // 服务器端返回的数据类型
+            success: function (data) {    // 请求成功后的回调函数，其中的参数data为controller返回的map,也就是说,@ResponseBody将返回的map转化为JSON格式的数据，然后通过data这个参数取JSON数据中的值
+                alert(data);
+            },error(data){
+                alert(data.responseText);
+            }
+        });
+    }
+
+
+    function submitFrom1() {
+
+        var name = $("#name1").val();    // 获取id为username的<input>框数据
+        var phone = $("#phone1").val();    // 获取id为password的<input>框数据
+        var beizhu = $("#beizhu1").val();
+        // Ajax提交数据
+        $.ajax({
+            url: "http://47.56.105.7/hr/niuroufen/submit",    // 提交到controller的url路径
+            type: "post",    // 提交方式
+            data: {"name": name, "phone": phone,"beizhu":beizhu,"isPc":0},  // data为String类型，必须为 Key/Value 格式。
+            dataType: "json",    // 服务器端返回的数据类型
+            success: function (data) {    // 请求成功后的回调函数，其中的参数data为controller返回的map,也就是说,@ResponseBody将返回的map转化为JSON格式的数据，然后通过data这个参数取JSON数据中的值
+                alert(data);
+            },error(data){
+                alert(data.responseText);
+            }
+        });
+    }
+    function focu() {
+        //document.getElementById("name").focus()
+        document.querySelector("#Table").scrollIntoView();
+    }
+</script>
+
+
+<script href="http://47.56.105.7/static/lr/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script href="http://47.56.105.7/static/lr/js/popper.min.js"></script>
+<script href="http://47.56.105.7/static/lr/js/city.js"></script>
+<script href="http://47.56.105.7/static/lr/js/method.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,350 @@
+document.writeln("<link href=\"http:\/\/3w.28s9.com\/gbinstallfile\/gbook\/css\/css.css\" rel=\"stylesheet\" type=\"text\/css\"  \/>");
+//document.writeln("<script type=\"text\/javascript\" src=\"http:\/\/3w.28s9.com\/gbinstallfile\/gbook\/js\/jquery.min.js\"><\/script>");
+
+var pid = 8656;
+var gbookStyle = 2;
+var pName = '';
+var sj400 = '0';
+var ip = '114.112.163.28';
+var url = window.location.href+'';
+var host = window.location.host;
+var host_p = host.replace(/\./g,"");
+var timestamp = timestamp = (new Date()).valueOf();  //当前时间戳
+var returnstr = '0_0_'+sj400+'_'+timestamp+'_'+host_p+'_guestip:'+ip+'^'+sj400+'&url:'+url;
+
+/**滚动留言**/ 
+/*
+function startmarquee(lh,speed,delay,index){ 
+	var t; 
+	var p=false; 
+	var o=document.getElementById("marqueebox"+index); 
+	o.innerHTML+=o.innerHTML; 
+	o.onmouseover=function(){p=true} 
+	o.onmouseout=function(){p=false} 
+	o.scrollTop = 0; 
+	function start(){ 
+	t=setInterval(scrolling,speed); 
+		if(!p) o.scrollTop += 2; 
+	} 
+	function scrolling(){ 
+		if(o.scrollTop%lh!=0){ 
+			o.scrollTop += 2; 
+			if(o.scrollTop>=o.scrollHeight/2) o.scrollTop = 0; 
+		}else{ 
+			clearInterval(t); 
+			setTimeout(start,delay); 
+		} 
+	} 
+	setTimeout(start,delay); 
+} 
+/*
+if(window.attachEvent)//IE:如果浏览器中存在window.attachEvent函数则使用window.attachEvent函数,判断是否是IE还可以使用:if (document.all){//..}
+window.attachEvent("onload",function() {startmarquee(89,20,3000,0);});
+else  //FireFox
+window.addEventListener("load",function() {startmarquee(89,20,3000,0);},true);
+/*
+window.onload=function(){
+startmarquee(89,20,3000,0); 
+} */
+
+/**startmarquee(一次滚动高度,速度,停留时间,图层标记);**/ 
+
+function checkform(f){
+		var reg = /^[\u4e00-\u9fa5]+$/i;
+        var reg1 = /^[0-9]+$/i;
+		if(f.text_trueName.value == "" || f.text_trueName.value == "请输入您的姓名"){
+			alert("姓名不能为空");
+			f.text_trueName.focus();
+			return false;
+		}else if(f.text_trueName.value.length > 5){
+			alert("姓名长度小于5");
+			f.text_trueName.focus();
+			return false;
+		}else if(!reg.test(f.text_trueName.value)){
+			alert("姓名必须为中文");
+			f.text_trueName.focus();
+			return false;
+		}else if(f.text_telephone.value == ""){
+			alert("手机不能为空");
+			f.text_telephone.focus();
+			return false;
+		}else if(f.text_telephone.value == "请输入您的手机号码或座机"){
+			alert("手机不能为空");
+			f.text_telephone.focus();
+			return false;
+		}else if(!reg1.test(f.text_telephone.value)) {
+            alert('手机只能是数字');
+            f.text_telephone.focus();
+            return false;
+        }else if(f.text_telephone.value.length != 11){
+			alert("手机号码为11位数字！");
+			f.text_telephone.focus();
+			return false;
+		}else if(f.text_content.value == ''){
+			alert('留言内容不能为空！');
+			f.text_content.focus();
+			return false;
+		}else{
+		    return true;
+		}
+}
+
+function sel(theinput)
+{
+  if(document.getElementById("text_content").value!=""){
+     document.getElementById("text_content").value+="\n"+theinput;
+  }else{
+	document.getElementById("text_content").value=theinput; 
+  }
+	 
+}
+
+function clrTA(obj, str) {
+	if (obj.value == str) {
+		obj.value = "";
+		obj.className = 'inputColor1';
+	}
+	else obj.className = 'inputColor2';
+}
+function inTA(obj, str, f) {
+	if (f == true || (f == null && obj.value == "")) {
+		obj.value = str;
+		obj.className = 'inputColor1';
+	}
+	else obj.className = 'inputColor2';
+}
+	
+	function callMyTelSend_gbook(){
+		var pID = pid;
+		var tj = document.getElementById('tj');
+		var myphone = document.getElementById('gbook_right_400').value;
+		var mob=/^((\+86)|(\(\+86\)))?((1[0-9]{1})+\d{9})$/;
+		if(pID){
+			if (!mob.test(myphone)) {
+				if(myphone=='输入您的手机号免费通话'){
+					alert('输入您的手机号免费拨打!');
+				}else{
+					alert('号码错误，请重新输入！');
+				}
+				document.getElementById("gbook_right_400").focus();
+				document.getElementById("gbook_right_400").select();
+
+				setTimeout(function(){
+
+				},1000);
+				return false;
+			}else{
+				var tj = document.getElementById('ly400_tj');
+			
+				$url = "http://super.28s9.com/mytool/400.php?act=call&pID="+pID+"&mob="+myphone+"&rand="+Math.random();
+				var myScriptObj = document.createElement('script');
+				myScriptObj.src = $url;
+				if(document.body){
+					document.body.appendChild(myScriptObj);
+				}else{
+					document.documentElement.appendChild(myScriptObj);
+				}
+				
+				tj.style.backgroundImage="url(http://3w.28s9.com/gbinstallfile/gbook/images/but01.gif)";
+				tj.onclick=function(){
+					alert('您已提交成功，请注意接听400电话');
+				}
+				setTimeout(function(){
+					tj.style.backgroundImage="url(http://3w.28s9.com/gbinstallfile/gbook/images/but01.jpg)";
+					tj.onclick=function(){
+						callMyTelSend_gbook();
+					}
+				},15000);
+				return true;
+			}
+		}
+	}
+	function callMyTelSend_tel(){
+		var pID = pid;
+		var tj = document.getElementById('gbook_tj400_img');
+		var myphone = document.getElementById('text_telephone').value;
+		var mob=/^((\+86)|(\(\+86\)))?((1[0-9]{1})+\d{9})$/;
+		if(pID){
+			if (!mob.test(myphone)) {
+				if(myphone=='输入您的手机号免费通话'){
+					alert('输入您的手机号免费拨打!');
+				}else{
+					alert('号码错误，请重新输入！');
+				}
+				setTimeout(function(){
+
+				},1000);
+				return false;
+			}else{
+				//$url = "http://super.28s9.com/mytool/400.php?act=call&pID="+pID+"&mob="+myphone+"&rand="+Math.random();
+				/*$url = "http://3w.28s9.com/gbinstallfile/sj400.php?pid="+pid+"&ip="+ip+"&tel="+myphone+"&rand="+Math.random();
+				var myScriptObj = document.createElement('script');
+				myScriptObj.src = $url;
+				if(document.body){
+					document.body.appendChild(myScriptObj);
+				}else{
+					document.documentElement.appendChild(myScriptObj);
+				}*/
+				/*
+				$.post(
+					'http://phone400sms.28.com/callTel2016.php',
+					{
+						ip					: ip,
+						tel					: myphone,
+						project_id			: sj400,
+						returnstr 			: returnstr,
+					},function(data){
+						console.log(data);
+						if(data.status == 'success'){
+							
+							tj.src="http://3w.28s9.com/gbinstallfile/gbook/images/gbookTel.gif";
+							tj.onclick=function(){
+								alert('您已提交成功，请注意接听400电话!~');
+							}
+							setTimeout(function(){
+								tj.src="http://3w.28s9.com/gbinstallfile/gbook/images/gbookTel.png";
+								tj.onclick=function(){
+									callMyTelSend_tel();
+								}
+							},15000);
+							return 'success';
+						}else{
+							alert('提交失败！'+data.status);
+						}
+					}
+				,'json');
+				*/
+				
+				tj.src="http://3w.28s9.com/gbinstallfile/gbook/images/gbookTel.gif";
+				tj.onclick=function(){
+					alert('您已提交成功，请注意接听400电话');
+				}
+				setTimeout(function(){
+					tj.src="http://3w.28s9.com/gbinstallfile/gbook/images/gbookTel.png";
+					tj.onclick=function(){
+						callMyTelSend_tel();
+					}
+				},15000);
+				return true;
+			}
+		}
+	}
+	
+	function get_telvcode(){
+		var pID = pid;
+		var tj = document.getElementById('gbook_Vcode_img');
+		var myphone = document.getElementById('text_telephone').value;
+		var mob=/^((\+86)|(\(\+86\)))?((1[0-9]{1})+\d{9})$/;
+		if(pID){
+			if (!mob.test(myphone)) {
+				alert('号码错误，请重新输入！');
+				setTimeout(function(){
+				},1000);
+				return false;
+			}else{
+				$url = "http://3w.28s9.com/gbinstallfile/vcode.php?pid="+pid+"&ip="+ip+"&tel="+myphone+"&rand="+Math.random();
+				var myScriptObj = document.createElement('script');
+				myScriptObj.src = $url;
+				if(document.body){
+					document.body.appendChild(myScriptObj);
+				}else{
+					document.documentElement.appendChild(myScriptObj);
+				}
+				
+				tj.src="http://3w.28s9.com/gbinstallfile/gbook/images/gbookVcode.gif";
+				tj.onclick=function(){
+					alert('验证码已发送到您手机,请注意查看！');
+				}
+				
+				setTimeout(function(){
+					tj.src="http://3w.28s9.com/gbinstallfile/gbook/images/gbookVcode.png";
+					tj.onclick=function(){
+						get_telvcode();
+					}
+				},5000);
+				return true;
+			}
+		}
+	}
+
+
+	document.writeln("<div class=\"lyb_pan\">");
+	document.writeln("<style>#zz:hover img{display:block;} #zz img{display:none;}<\/style>");
+document.writeln("<div class=\"ly_top\">");
+var tel_num;
+document.writeln("<div id=\"zz\" style=\"float:right;color:#fff;font-size:24px;padding:10px;\">企业资质");
+document.writeln("<div style=\"text-align:center;position:absolute;right:2px;\">");
+document.writeln("<\/div>"); 
+document.writeln("<\/div>"); 
+
+document.writeln("<\/div>");
+//<!-- 留言板 -->
+
+document.writeln("<FORM id=\"lyb_bor\" target= \"_blank\" method=\"post\" name=\"shekeform\" action=\"http://3w.28s9.com\/gbinstallfile\/insertdb.php?projectID="+pid+"&gbookStyle="+gbookStyle+"&purl="+encodeURIComponent(window.location.href)+"&rurl="+encodeURIComponent(document.referrer)+"\">");
+document.writeln("<div class=\"ly_pannel\" id=\"gbook\">");
+document.writeln("<div class=\"ly_right\">");
+	
+document.writeln("<div class=\"ly_cn\"><\/div>");var cookie_tel = '请输入您的手机号码或座机';
+document.writeln("<div class=\"ly_input font01\"><span><i>*</i>手机：<\/span>");
+document.writeln("<input type=\"text\" onblur=\"inTA(this, \'请输入您的手机号码或座机\');\" onfocus=\"clrTA(this, \'请输入您的手机号码或座机\');\" id=\"text_telephone\" value=\""+cookie_tel+"\" name=\"text_telephone\" />");
+//alert(sj400);
+document.writeln("<div style=\"color:red\" id=\"text_telephone_msg\" class=\"ly_error\"><\/div>");
+document.writeln("<\/div>");
+	 
+document.writeln("<div class=\"ly_input font01\"><span><i>*<\/i>姓名：<\/span>");
+	
+var cookie_name = '请输入您的姓名';
+document.writeln("<input type=\"text\" onblur=\"inTA(this, \'请输入您的姓名\');\" onfocus=\"clrTA(this, \'请输入您的姓名\');\" id=\"text_trueName\" value=\""+cookie_name+"\" name=\"text_trueName\"/>");
+document.writeln("<div id=\"imgtel\" class=\"ly_r_text\">");
+document.writeln("<span>联系时间：<\/span>");
+document.writeln("<select name=\"contactDate\" id=\"linktime\" class=\"input_bor\">");
+document.writeln("<option value=\"0\">随时<\/option>");
+document.writeln("<option value=\"1\">上班<\/option>");
+document.writeln("<option value=\"2\">下班<\/option>");
+document.writeln("<\/select>");
+document.writeln("<\/div>");
+
+document.writeln("<div style=\"color:red\" id=\"text_trueName_msg\" class=\"ly_error\"><\/div>");
+document.writeln("<\/div>");
+
+	
+document.writeln("<div class=\"ly_textarea\"><span class=\"f16\">留言：<\/span>");
+document.writeln("<textarea subid=\"text_content_msg\" id=\"text_content\" name=\"text_content\"><\/textarea>");
+document.writeln("<div class=\"ly_kj\"> <em><img src=\"http://3w.28s9.com\/gbinstallfile\/gbook\/images\/gb_06.gif\"><\/em>");
+document.writeln("<div class=\"ly_kj_tit\">快捷留言：<\/div>");
+document.writeln("<ul class=\"gbook20130830_kj_ul\">");
+document.writeln("<li><a onclick=\"sel(\'请问我这个地方有加盟商了吗？\')\"  href=\"javascript:void(0);\">请问我这个地方有加盟商了吗？<\/a><\/li>");
+document.writeln("<li><a onclick=\"sel(\'我想加盟，请来电话告诉我具体细节。\')\"  href=\"javascript:void(0);\">我想加盟，请来电话告诉我具体细节。<\/a><\/li>");
+document.writeln("<li><a onclick=\"sel(\'想了解加盟细节，请尽快寄一份资料。\')\"  href=\"javascript:void(0);\">想了解加盟细节，请尽快寄一份资料。<\/a><\/li>");
+document.writeln("<li><a onclick=\"sel(\'给您留过言，未收到资料，请给我来电。\')\"  href=\"javascript:void(0);\">给您留过言，未收到资料，请给我来电。<\/a><\/li>");
+document.writeln("<\/ul>");
+document.writeln("<\/div>");
+document.writeln("<\/div>");
+
+/*document.writeln("<div class=\"ly_cydk\"><input type=\"checkbox\" value=\"1\" name=\"tongleituijian\" style=\"margin:0 5px 0 0px;\"><a target=\"_blank\" href=\"\/paihang.php\">同类项目<\/a>可以推荐给我<\/div>");*/
+document.writeln("<div class=\"ly_tj\">");
+document.writeln("<input type=\"image\" value=\"\" src=\"http://3w.28s9.com\/gbinstallfile\/gbook\/images\/sbtout.png\" id=\"bt_submit\" onmouseout=\'this.src=\"http://3w.28s9.com\/gbinstallfile\/gbook\/images\/sbtout.png\'\" onmousemove=\"this.src=\'http://3w.28s9.com\/gbinstallfile\/gbook\/images\/sbtmove.png\'\">");
+document.writeln("<\/div>");
+document.writeln("<\/div>");
+	
+document.writeln("<div class=\"ly_left\">");
+/*	document.writeln("<div class=\"ljsq_tel\">");
+
+	document.writeln("<input type=\"text\" size=\"12\" id=\"gbook_right_400\" class=\"tel\" value=\"输入您的手机号免费通话\" onfocus=\"if (this.value == \'输入您的手机号免费通话\') {this.value = \'\';}\" onblur=\"if (this.value == \'\') {this.value = \'输入您的手机号免费通话\';}\" />");
+	document.writeln("<input id=\"ly400_tj\" class=\"tj\"  type=\"button\"  value=\" \" onClick=\"callMyTelSend_gbook()\"/>");
+	document.writeln("<\/div>");*/
+	document.writeln("<div><img src=\"http://3w.28s9.com\/gbinstallfile\/gbook\/images\/freetelz.jpg\" style=\"margin-bottom:25px;\"><\/div>");
+document.writeln("<div class=\"ly_ts_box\">");
+document.writeln("<div class=\"ly_ts\">");
+document.writeln("<div class=\"ly_ts_tit\">温馨提示：<\/div>");
+document.writeln("<p>请填写真实信息，我们会把有价值的经营管理理念传递给您，让您早日实现创业梦想!<\/p>");
+document.writeln("<\/div>");
+document.writeln("<\/div>");
+document.writeln("<\/div>");
+
+document.writeln("<div class=\"clear\"><\/div>");
+document.writeln("<\/div>");
+document.writeln("<\/FORM>");
+//<!-- 留言板 -->
+	
+document.writeln("<\/div>");

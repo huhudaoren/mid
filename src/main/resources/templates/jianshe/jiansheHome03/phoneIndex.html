@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>建设03</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="http://47.56.105.7/static/lr/css/bootstrap.min.css" />
+    <script  href="http://47.56.105.7/static/assets/js/jquery.min.js"type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <style type="text/css">
+
+
+        label {
+            color: #828282
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        label {
+            font-size: 10px;
+            color: #777978;
+        }
+
+        span {
+            color: red;
+        }
+
+        label {
+            /*font-size: 26px;*/
+            color: #000;
+            display: inline-block;
+        }
+        .inputText{
+            border-left-width:0px;
+            border-top-width:0px;
+            border-right-width:0px;
+            width:90%;
+            height:45px;
+            margin-top: -20px;
+        }
+        input::-webkit-input-placeholder{
+            color: #bfc7ca;
+        }
+        .fromTable label{
+            font-size: 20px;
+        }
+        .fromTable label input{
+            width: 20px;
+            height: 20px;
+        }
+        img { height: auto; width: auto\9; width:100%; }
+    </style>
+
+
+</head>
+
+<body>
+<div class="login-box" id="app" style="">
+    <div class="login-box-body">
+
+        <img src="http://47.56.105.7:8914/static/jianshe/img/03phonetop.jpg"/>
+
+
+
+        <div style="width: 100%;margin: auto;text-align:center;" id="Table" >
+            <h4 style="color: #fff">获取更多加盟资料</h4>
+            <div  class="fromTable" >
+                <p style="float: left;padding-left: 30px">姓名<span>*</span></p>
+                <input type="text" name="name" id="name" class="inputText" placeholder="姓名" />
+                <br /><br />
+                <p style="float: left;padding-left: 30px">电话<span>*</span></p>
+                <input type="text" name="phone" id="phone" class="inputText" placeholder="手机号" />
+                <br />
+                <p style="padding-left: 30px">您所在城市（单选）<span style="color: #f20000">*&nbsp;&nbsp;&nbsp;</span></p>
+                <label style="float: left;;padding-left: 5%"><input name="area" type="radio" value="广州" />广州 </label>
+                <label><input name="area" type="radio" value="深圳"  />深圳 </label>
+                <br />
+                <label style="float: left;;padding-left: 5%"><input name="area" type="radio" value="东莞" />东莞 </label>
+                <label><input name="area" type="radio" value="佛山" />佛山 </label>
+                <br />
+                <label style="float: left;;padding-left: 5%"><input name="area" type="radio" value="中山" />中山 </label>
+                <label><input name="area" type="radio" value="珠海" />珠海 </label>
+                <br>
+				<label style="float: left;;padding-left: 5%"><input name="area" type="radio" value="贵州" />贵州 </label>
+				<br><br>
+                <p style="padding-left: 30px">别墅装修设计面积（单选）<span style="color: #f20000">*</span></p>
+                <label style="float: left;;padding-left: 5%"><input name="supm" type="radio" value="150-300平方米" />150-300M<sup>2</sup> </label>
+                <label><input name="supm" type="radio" value="300-500平方米" />300-500M<sup>2</sup></label>
+                <br />
+                <label style="float: left;;padding-left: 5%"><input name="supm" type="radio" value="500-800平方米" />500-800M<sup>2</sup></label>
+                <label><input name="supm" type="radio" value="800平方米以上" />800M<sup>2</sup>以上</label>
+                <input type="hidden" name="isPc" id="isPc" value="0" />
+                <br />
+                <input type="submit" style="margin-top: 20px; background:#4968ff; width:80%;height:40px;font-size:15px;" onclick="submitFrom()" value="立即获取别墅装修设计报价"/>
+            </div>
+
+        </div>
+
+        <img src="http://47.56.105.7:8914/static/jianshe/img/03phoneleft.jpg"/>
+        <img src="http://47.56.105.7:8914/static/jianshe/img/gif.gif"/>
+        <img src="http://47.56.105.7:8914/static/jianshe/img/03phonebuttom.jpg"/>
+    </div>
+
+
+</div>
+<!--<div style="margin-left: 0%;width: 7%; border-radius:5px; position: fixed;background:#036eb8;  bottom: 63%; height:12%; font-size: 0;  z-index: 100; text-align:center;" onclick="focu()">-->
+<!--    <p style="font-size:15px;color:#f0f0f0;height:50px">获取更多</p>-->
+<!--</div>-->
+<script src="http://47.56.105.7/static/assets/js/jquery.min.js"></script>
+<script>
+    function submitFrom() {
+        var name = $("#name").val();
+        var phone = $("#phone").val();
+        var supm = $("input[name='supm']:checked").val();
+        var area = $("input[name='area']:checked").val();
+        if(name == null || name.length ==0){
+            alert("请输入姓名");return;
+        }
+        if(phone == null || phone.length ==0){
+            alert("请输入手机号");return;
+        }
+        if(supm == null || supm.length ==0){
+            alert("请选择平方米");  return;
+        }
+        if(area == null || area.length ==0){
+            alert("请选择地址"); return;
+        }
+
+        // Ajax提交数据
+        $.ajax({
+            url: "http://47.56.105.7/hr/jianshe02/submit",
+            //url: "http://localhost/hr/jianshe03/submit",
+            type: "post",    // 提交方式
+            data: {"name": name, "phone": phone,"isPc":0,"supm":supm,"area":area,"type":3},
+            dataType: "json",
+            success: function (data) {
+                alert(data);
+            },error(data){
+                alert(data.responseText);
+            }
+        });
+    }
+    function focu() {
+        //document.getElementById("name").focus()
+        document.querySelector("#Table").scrollIntoView();
+    }
+</script>
+
+
+<script href="http://47.56.105.7/static/lr/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script href="http://47.56.105.7/static/lr/js/popper.min.js"></script>
+<script href="http://47.56.105.7/static/lr/js/city.js"></script>
+<script href="http://47.56.105.7/static/lr/js/method.js"></script>
+</body>
+
+</html>

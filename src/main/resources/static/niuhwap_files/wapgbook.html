@@ -1,0 +1,208 @@
+document.writeln("<script type=\"text\/javascript\" src=\"http:\/\/3w.28s9.com\/gbinstallfile\/gbook\/js\/jquery.min.js\"><\/script>");
+
+function checkNickname(that){
+	//避免一个页面调用多次留言板导致只有一个留言板生效
+	var nickname_flag=true;
+	if($(that).attr('id')=='text_trueName'){
+		$(that).parent().prev().html('');
+		var nickname=$(that).val().replace(/^\s+|\s+$/,'');
+		var nickname_reg=/^[\u4E00-\u9FA5\uf900-\ufa2d\w-]{1,12}$/;
+		if(!nickname_reg.test(nickname)){
+			$(that).parent().prev().html('请输入您的姓名');
+			nickname_flag=false;
+		}else{
+			$(that).parent().prev().html('');
+		}
+	}else if($(that).attr('id')=='submitLeaveword'){
+		$(that).siblings('#name_flag').html('');
+		var nickname=$(that).siblings('#name_flag').next().children("#text_trueName").val().replace(/^\s+|\s+$/,'');
+		var nickname_reg=/^[\u4E00-\u9FA5\uf900-\ufa2d\w-]{1,12}$/;
+		if(!nickname_reg.test(nickname)){
+			$(that).siblings('#name_flag').html('请输入您的姓名');
+			nickname_flag=false;
+		}else{
+			$(that).siblings('#name_flag').html('');
+		}
+	}
+	//$('#statu_flag').html('');
+	//var nickname_flag=true;
+	//var nickname=$('#text_trueName').val().replace(/^\s+|\s+$/,'');
+	//var nickname_reg=/^[\u4E00-\u9FA5\uf900-\ufa2d\w-]{1,12}$/;
+	//if(!nickname_reg.test(nickname)){
+		//$('#name_flag').html('请输入您的姓名');
+		//nickname_flag=false;
+	//}else{
+		//$('#name_flag').html('');
+	//}
+	return nickname_flag;
+}
+
+function checkPhone(that){
+	//避免一个页面调用多次留言板导致只有一个留言板生效
+	//console.log($(that).attr('id'));
+	var phone_flag=true;
+	if($(that).attr('id')=='text_telephone'){
+		$(that).parent().prev().html('');
+		var phone=$(that).val().replace(/^\s+|\s+$/,'');
+		var phone_reg= /^((\+86)|(\(\+86\)))?((1[0-9]{1})+\d{9})$/;
+		if(!phone_reg.test(phone)){
+			$(that).parent().prev().html('请输入您经常使用的手机号');
+			phone_flag=false;
+		}else{
+			$(that).parent().prev().html('');
+		}
+	}else if($(that).attr('id')=='submitLeaveword'){
+		$(that).siblings('#phone_flag').html('');
+		var phone=$(that).siblings('#phone_flag').next().children("#text_telephone").val().replace(/^\s+|\s+$/,'');
+		var phone_reg= /^((\+86)|(\(\+86\)))?((1[0-9]{1})+\d{9})$/;
+		if(!phone_reg.test(phone)){
+			$(that).siblings('#phone_flag').html('请输入您经常使用的手机号');
+			phone_flag=false;
+		}else{
+			$(that).siblings('#phone_flag').html('');
+		}
+	}
+	
+	return phone_flag;
+}
+
+function checkSex(that){
+	
+  var radio = $(that).siblings('.inputbox').children("[name='contactDate']")
+ //var radio=document.getElementsByName("contactDate");
+  for(var i=0;i<radio.length;i++){
+	if(radio[i].checked==true){
+	  value=radio[i].value;
+	  break;
+	}
+  }
+  return value;
+}
+
+
+function subLeaveword(that){
+	nickname_flag=checkNickname(that);
+	phone_flag=checkPhone(that);
+	var contactDate=checkSex(that);
+	/*
+	var json={
+			'projectId':$('#pid').val().replace(/^\s+|\s+$/,''),
+			'comeID':$('#comeID').val().replace(/^\s+|\s+$/,''),
+			'nickname':$('#text_trueName').val().replace(/^\s+|\s+$/,''),
+			'phone':$('#text_telephone').val().replace(/^\s+|\s+$/,''),
+			'referer':document.referrer,
+			'contactDate':contactDate,
+			'gbookVcode':$('#gbookVcode').val().replace(/^\s+|\s+$/,''),
+	}
+*/
+	if(nickname_flag && phone_flag){
+		$(that).parent('#myform').submit();
+		/*$.ajax({
+			url:'http://3w.28s9.com/gbinstallfile/wp/wap_gbookin.php',
+			type: "post",
+			data: json,
+			crossDomain: true,
+			xhrFields: {
+				withCredentials: true
+			},
+			dataType: "json",
+			beforeSend: function(){
+				 $('#submitLeaveword').attr('href','javascript:void(0)')
+			},
+			success: function (data) {
+				console.log(data);
+			}
+		});*/
+	  /*$.ajax({
+		  type:'post',
+		  url:'http://3w.28s9.com/gbinstallfile/wp/wap_gbookin.php',		  
+		  data:json,
+		  xhrFields: {withCredentials: true},
+		  beforeSend: function(){
+			 $('#submitLeaveword').attr('href','javascript:void(0)')
+		  },
+		  success:function(dt){
+			  console.log(dt);
+			  alert(dt);
+			$('#submitLeaveword').attr('href','javascript:subLeaveword()');
+		  }
+	  });*/
+	}
+}
+
+function get_telvcode(){
+	var pID = 9729;
+	var tj = document.getElementById('btn_vcode');
+	
+	phone_flag=checkPhone();
+	var myphone = $('#text_telephone').val().replace(/^\s+|\s+$/,'');
+
+	var mob=/^((\+86)|(\(\+86\)))?((1[0-9]{1})+\d{9})$/;
+	if(pID){
+		if (phone_flag){
+			$url = "http://3w.28s9.com/gbinstallfile/wp/wapvcode.php?pid="+pid+"&tel="+myphone+"&rand="+Math.random();
+			var myScriptObj = document.createElement('script');
+			myScriptObj.src = $url;
+			if(document.body){
+				document.body.appendChild(myScriptObj);
+			}else{
+				document.documentElement.appendChild(myScriptObj);
+			}
+			
+			tj.text = '已发送验证';
+			tj.onclick=function(){
+				alert('验证码已发送到您手机,请注意查看！');
+			}
+			
+			setTimeout(function(){
+				tj.text = '获取验证码';
+				tj.onclick=function(){
+					get_telvcode();
+				}
+			},5000);
+			return true;
+		}
+	}
+}
+
+//document.writeln("<link href=\"http:\/\/3w.28s9.com\/gbinstallfile\/wp\/css\/gbook.css?4\" rel=\"stylesheet\" type=\"text\/css\"  \/>");
+
+document.writeln("<section>");
+document.writeln("	<a id=\"gbook\"><\/a>");
+document.writeln("	<div class=\"msg_box\" id=\"msg01\">");
+document.writeln("		<!--<span>本站隶属美国上市企业，您的个人信息不会被泄露！<\/span>-->");
+document.writeln("		<p class=\"zs_box\">温馨提醒：该项目已获诚信投资认证，请放心合作<\/p>");
+document.writeln("		<form id=\"myform\" action=\"http://3w.28s9.com/gbinstallfile/wp/wap_gbookin_20190418.php?"+"referer="+encodeURIComponent(window.location.href)+"&referrerurl="+encodeURIComponent(document.referrer)+"\" method=\"post\">");
+document.writeln("			<b class=\"hs_wz\" id=\"name_flag\" class=\"name_flag\"><\/b>");
+document.writeln("			<p class=\"inputbox\"><b class=\"hs\">*<\/b><label>姓名：<\/label><input name=\"text_trueName\" value=\"\" id=\"text_trueName\" type=\"text\" placeholder=\"如 张先生\"  class=\"input\" onblur=\"checkNickname(this)\"><\/p>");
+document.writeln("			<b class=\"hs_wz\" id=\"phone_flag\"><\/b>");
+document.writeln("			<p class=\"inputbox\"><b class=\"hs\">*<\/b><label>手机：<\/label><input name=\"text_telephone\" value=\"\" id=\"text_telephone\" type=\"text\" placeholder=\"如 13696666888\"  class=\"input\" onblur=\"checkPhone(this)\"><\/p>");
+document.writeln("			<b class=\"hs_wz\"><\/b>");
+document.writeln("			<p class=\"inputbox\"><b class=\"hs\">*<\/b><label>回访：<\/label>");
+document.writeln("				<input type=\"radio\" value=\"0\" checked=\"checked\" name=\"contactDate\">随时&nbsp;&nbsp;");
+document.writeln("				<input type=\"radio\" value=\"1\" name=\"contactDate\">上班时间&nbsp;&nbsp;");
+document.writeln("				<input type=\"radio\" value=\"2\" name=\"contactDate\">下班时间");
+document.writeln("			<\/p>");
+document.writeln("			<input type=\"hidden\" name=\"pid\" id=\"pid\" value=\"9729\">");
+document.writeln("			<input type=\"hidden\" name=\"comeID\" id=\"comeID\" value=\"\">");
+document.writeln("			<a id=\"submitLeaveword\" class=\"btn_tj\" onclick=\"subLeaveword(this)\">提交留言<\/a>");
+document.writeln("		<\/form>");
+document.writeln("	<\/div>");
+document.writeln("<\/section>");
+
+if(window.location.href.indexOf('oujuwap'|'aflinwap')>-1){
+	$(".inputbox").css({
+		"height": "38px", 
+	"border":  "1px solid #ccc",
+    "border-radius":  "5px",
+    "-webkit-box-shadow": "0 0px 6px rgba(0,0,0,0.075)",
+    "box-shadow": "0 0px 6px rgba(0,0,0,0.075)",
+    "overflow":"hidden"
+	});
+	$(".input").css({
+		"border":"none",
+		"font-size":"14px",
+		"height": "30px",
+		"width":"70%"
+	})
+}

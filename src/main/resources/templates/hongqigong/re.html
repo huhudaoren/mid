@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>七公江湖</title>
+    <style>body,h1,h2,h4,h5,dd,ul,p,form,textarea,th,td,select{ margin: 0;padding: 0;} em { font-style: normal;} li {list-style: none;} a {text-decoration: none;color:#333333;} table img {border: none;vertical-align: top; display:block; border:0px} table {border-collapse: collapse;} input,textarea {outline: none;} textarea {resize: none;overflow: auto;} body {font-size: 12px;font-family: "微软雅黑";} * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }</style></head>
+
+<body>
+<div  style="line-height: 0; font-size: 0px; position: fixed; right: 30px; bottom: 0px; width: 360px; height: 0px; z-index: 1000000; cursor: move; overflow: visible;">
+    <div class="mini-btn mini-btn1" id="mini-btn" style="width: auto; white-space: nowrap; cursor: pointer; display: block; position: absolute; right: 0px; bottom: 0px; z-index: -1;background-color: #FF9420; height: 42px; border-radius: 2px; overflow: hidden; background: rgb(31, 31, 31) none repeat scroll 0% 0%; box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 6px, rgba(0, 0, 0, 0.16) 0px 2px 32px !important;">
+
+        <button style="border:none;margin:0;padding: 0;outline: none;background-color:#FF9420;" onclick="focu()" >
+            <div class="mini-btn-info" style="position: relative;width: 42px;height: 42px;display:inline-block;">
+                <span style="width:100%;height:100%;position:absolute;left:0;top:0;z-index:1;background: center center no-repeat;background-color: #FF9420;background-image: url(https://www5c1.53kf.com/style/chat/new2017/image/png/img-info24.png);background-image: url(https://www5c1.53kf.com/style/chat/new2017/image/svg/img-info24.svg), none;"></span>
+                <span style="width:100%;height:100%;position:absolute;left:0;top:0;background:#000;opacity:0.2;filter:alpha(opacity=20);background-color: #FF9420;"></span>
+                <span id="info-num" style="display:none;position: absolute;top: 5px;right: 5px;z-index:10;height: 14px;min-width: 14px;line-height: 14px;border-radius: 7px;background: red;font-size: 12px;background-color: #FF9420;color: #FFFFFF;letter-spacing: 0.47px;text-align: center;">0</span></div>
+            <div style="width:auto;font-weight:normal;display:inline-block;vertical-align:top;line-height: 42px;padding: 0 8px;font-size: 16px;color: #FFFFFF;letter-spacing: 0.83px;word-break: break-all;text-align: center;background-color: #FF9420;" onclick=""><span>立即留言</span></div>
+        </button>
+
+        <div class="mini-btn-window" style="background-color: #FF363A;display:inline-block;width: 42px;height: 42px;background: center center no-repeat;background-image: url(../../static/qgjhiphone_files/ipone1.svg);background-color: #FF363A;"></div>
+        <div  style="width:auto;font-weight:normal;display:inline-block;vertical-align:top;background-color: #FF363A;line-height: 42px;padding: 0 8px;font-size: 16px;color: #FFFFFF;letter-spacing: 0.83px;word-break: break-all;text-align: center;"><a href="https://www5c1.53kf.com/webCompany.php?kf_sign=Dg3ODMTU3Mg5MTEwODg0NDAzMzg0MDA0NzIxNzUxMTg%253D&amp;arg=10175118&amp;style=3" style="color:#FFFFFF">免费咨询</a></div>
+
+
+    </div>
+    <div id="iframe_company_mini_div" style="font-size: 0px; background-color: rgb(255, 255, 255); border-radius: 2px; overflow: hidden; width: 100%; height: 400px; box-shadow: rgba(0, 0, 0, 0.16) 0px 5px 40px !important; display: none;">
+        <h6 class="pc-visitor-header" style="width:100%;box-sizing:border-box;background: #1f1f1f no-repeat 10px;margin:0;padding:0;padding-left: 10px;font-size: 14px;color: #fff;height: 36px;line-height: 36px;position: relative;font-weight: normal;padding-right: 72px;">
+            <img style="max-width: 80px;width:auto;height:24px;float: left;margin-top: 6px;border-radius:2px;" src="../../static/qgjhiphone_files/mobile_53kf_1564112024.jfif">
+            <label style="background: none; padding: 0; margin: 0; border: 0; line-height:36px;cursor:move;font-weight:normal;cursor:move;color: #fff;display: inline-block;float: left;max-width:60%;margin-left: 5px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;" class="header-company">洪七公吃串串加盟总部</label>
+            <span onclick="max_from_company_mini(this);" title="最大化" class="pc-new pc-title-btn" style="background: url(https://www5c1.53kf.com/style/chat/new2017/image/png/newWindow.png) center no-repeat;background-image: url(https://www5c1.53kf.com/style/chat/new2017/image/svg/newWindow.svg),none;position: absolute;width: 36px;height: 36px;cursor: pointer;right: 40px;top: 0;fill: #F08000;"></span>
+            <span onclick="hide_floatWindow();" title="最小化" class="pc-hide pc-title-btn" style="background-position: center center; background-repeat: no-repeat; background-attachment: scroll; background-size: auto; background-origin: padding-box; background-clip: border-box; background-image: url(&quot;https://www5c1.53kf.com/style/chat/new2017/image/svg/to-minWindow.svg&quot;), none; position: absolute; width: 36px; height: 36px; cursor: pointer; right: 0px; top: 0px;"></span>
+        </h6>
+        <iframe id="iframe_company_mini" style="height:364px;width:100%;margin:0;padding:0;visibility: inherit;opacity:1;position:inherit;" src="https://www5c1.53kf.com/webCompany.php?kf_sign=Dg3ODMTU3Mg5MTEwODg0NDAzMzg0MDA0NzIxNzUxMTg%253D&amp;arg=10175118&amp;style=3" data-savepage-key="0-2" frameborder="0"> </iframe>
+
+    </div>
+</div>
+<div id="kfivtwin" style="display: none; overflow: hidden;">
+    <div id="acc_title" style="cursor: pointer; height: 23px; width: 100%; position: relative; line-height: 23px; overflow: visible;">
+        <div style="float:left;width:8px; background:url(https://www5c1.53kf.com/img/new06/fu-t-l.gif) no-repeat; height:23px;"></div>
+        <div style="float:left;width:384px;height:23px; background:url(https://www5c1.53kf.com/img/new06/fu-t-c.gif) repeat-x ;line-height:23px;color:#ffffff;text-align:left;">53KF邀请</div>
+        <div style="float:left;width:8px; background:url(https://www5c1.53kf.com/img/new06/fu-t-r.gif) no-repeat; height:23px;"></div>
+    </div>
+    <div style="clear:both;width:400px;background:url(https://www5c1.53kf.com/img/ivt/53kf01bg.gif);height:auto; overflow:hidden;">
+        <div style="float:left;height:100%;width:100px;background: url(https://www5c1.53kf.com/img/ivt/53kf01bg.gif) left;   text-align:center;">
+            <img style="DISPLAY: inline;margin-top:10px;cursor:pointer;" src="../../static/qgjhiphone_files/ivt_cn.gif"></div>
+        <div style="float:right;height:auto;*height:auto;*height:auto !important;width:300px;*width:298px;* width:295px !important; background:url(https://www5c1.53kf.com/img/ivt/53kf01bg.gif) right; text-align:left;">
+            <div style="clear:both;width:95%;padding-top:10px; text-align:left;line-height:17px;font-family:tahoma;font-size:12px;color:#000000; height:auto; overflow:hidden;">欢迎您！
+                <br>
+                <span id="hz6d_acc_content">acc_content</span></div>
+            <div style="clear:both;width:95%;margin-top:5px;text-align:right;">
+                <button id="hz6d_53kf_invite_acc" onclick=';onliner_zdfq=2;window.open("talk_openurl","_blank","height=473,width=703,top=200,left=200,status=yes,toolbar=no,menubar=no,resizable=yes,scrollbars=no,location=no,titlebar=no");hidden_ivt();' style="DISPLAY: inline; cursor:pointer;height:24px;width:76px;border:0px;background:none;">
+                    <img style="DISPLAY: inline;" src="../../static/qgjhiphone_files/fu-button1_cn.gif"></button>&nbsp;&nbsp;
+                <button onclick=";onliner_zdfq=3;hidden_ivt();" style="DISPLAY: inline;cursor:pointer;height:24px;width:76px;border:0px;background:none;">
+                    <img style="DISPLAY: inline;" src="../../static/qgjhiphone_files/fu-button2_cn.gif" id="hz6d_53kf_invite_hid"></button></div>
+        </div>
+    </div>
+    <div style="height:8px;width:100%;clear:both; line-height:8px; float:left;">
+        <div style="height:8px;width:8px;float:left; background:url(https://www5c1.53kf.com/img/new06/fu-b-l.gif) no-repeat;line-height:8px;"></div>
+        <div style="height:8px;width:384px;float:left; background:url(https://www5c1.53kf.com/img/new06/fu-b-c.gif) repeat-x;line-height:8px;"></div>
+        <div style="height:8px;width:8px;float:right; background:url(https://www5c1.53kf.com/img/new06/fu-b-r.gif) no-repeat;line-height:8px;"></div>
+    </div>
+</div>
+<div id="kfivteffect" style="display: none; position: absolute; width: 0px; height: 0px; overflow: hidden; border: 1px solid rgb(27, 136, 208); background: rgb(214, 238, 253) none repeat scroll 0% 0%; z-index: 10087;"></div>
+<iframe id="kfiframe" src="" style="display: none; overflow: hidden;" scrolling="no" frameborder="0"></iframe>
+<div id="iconDiv1" style="height: auto; width: auto;">
+    <iframe style="position:absolute;z-index:7998;width:0px;height:0px;top:0px;left:0px;" frameborder="0"></iframe>
+</div>
+<script src="../../static/qgjhiphone_files/3"></script>
+<script type="text/javascript" id="Counter28" async="" src="../../static/qgjhiphone_files/528counter.js"></script>
+<script>var projectID = 8656;</script>
+<!-- 头部 -->
+<link href="../../static/qgjhiphone_files/wap_fd.css" rel="stylesheet" type="text/css">
+<link href="../../static/qgjhiphone_files/html5.css" rel="stylesheet" type="text/css">
+<script src="../../static/qgjhiphone_files/jquery.js" language="javascript" type="text/javascript"></script>
+<style>@media screen and (max-device-width: 640px){ body {width: 100%;}} @media screen and (min-width: 640px){ body {width: 640px;margin: 0 auto;}} ul,li{ margin:0; padding:0; list-style:none} /*img { width:100%; vertical-align:bottom}*/ header { background: #bf0000 none repeat scroll 0 0; border-bottom: 1px solid #850400; color: #fff; display: block; font: bold 12px/28px "微软雅黑"; position: relative; text-align: center; }
+
+.Lelem{
+    display: none;
+}
+#Lelem{
+    display: none;
+}
+</style>
+<!-- <script type="text/javascript">/*  项目页头部LOGO       */
+
+   var pathname = window.location.pathname;
+   var kj = 1;
+   if (pathname.indexOf("qt-") > 0) {
+     kj = 0;
+   }
+   var jj = 1;
+   var url = "http://3w.28s9.com/html/header/wap_header.php?pID=" + projectID + "&host=" + window.location.host + "&kj=" + kj + "&jj=" + jj + "&r=" + Math.random();
+   document.write('<sc' + 'ript src="' + url + '" ></scri' + 'pt>');
+
+   /*  项目页头部LOGO  END */
+   </script> -->
+
+<!-- 头部结束 -->
+<!--内容部分-->
+<table id="__01" width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+    <tbody>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_01.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_02.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_03.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_04.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_05.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_06.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_07.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_08.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_09.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_10.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_11.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_12.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_13.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_14.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_15.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_16.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_17.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_18.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_19.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_20.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_21.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_22.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_23.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_24.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_25.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_26.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_27.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_28.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_29.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_30.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_31.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_32.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_33.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_34.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_35.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_36.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_37.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_38.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_39.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_40.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_41.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_42.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_43.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_44.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_45.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_46.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_47.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_48.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_49.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/qgjhiphone_files/index_50.jfif" alt="" width="100%"></td>
+    </tr>
+    </tbody>
+</table>
+<!--内容部分结束-->
+<!--留言板代码-->
+<div id="gbook"></div>
+<!--<script>document.write("<iframe id='iframeId' src='http://3w.28s9.com/wp/gbook.php?pID="+projectID+"&purl="+window.location.href+"' width='100%' height='280px' name='gbform' frameborder='0' scrolling='no'></iframe>");</script>
+<script>
+$("#iframeId").load(function () {
+var mainheight = $(this).contents().find("body").height() + 10;
+$(this).height(mainheight);
+});
+</script>
+-->
+<!--    <script type="text/javascript">(function() {
+        var url = "http://3w.28s9.com/gbinstallfile/wp/wapgbook.php?pID=" + projectID + "&purl=" + window.location.href + "&r=" + Math.random();
+        document.write('<sc' + 'ript src="' + url + '" ></scri' + 'pt>');
+      })();</script> --><!--
+    <script src="../../static/qgjhiphone_files/wapgbook.html"></script> -->
+<script type="text/javascript" src="../../static/qgjhiphone_files/jquery_002.js"></script>
+<section>
+    <a id="gbook"></a>
+    <div class="msg_box" id="msg01" >
+        <!--<span>本站隶属美国上市企业，您的个人信息不会被泄露！</span>-->
+        <p class="zs_box Table" id="Table">温馨提醒：该项目已获诚信投资认证，请放心合作</p>
+        <form id="myform" action="#####" method="post">
+            <b class="hs_wz" id="name_flag"></b>
+            <p class="inputbox">
+                <b class="hs">*</b>
+                <label>姓名：</label>
+                <input name="text_trueName" id="text_trueName" type="text" placeholder="如 张先生" class="input" onblur="checkNickname(this)"></p>
+            <b class="hs_wz" id="phone_flag"></b>
+            <p class="inputbox">
+                <b class="hs">*</b>
+                <label>手机：</label>
+                <input name="text_telephone" id="text_telephone" type="text" placeholder="如 13696666888" class="input" onblur="checkPhone(this)"></p>
+            <b class="hs_wz"></b>
+            <p class="inputbox">
+                <b class="hs">*</b>
+                <label>回访：</label>
+                <input type="radio" value="0" checked="checked" name="contactDate">随时&nbsp;&nbsp;
+                <input type="radio" value="1" name="contactDate">上班时间&nbsp;&nbsp;
+                <input type="radio" value="2" name="contactDate">下班时间</p>
+            <input type="hidden" name="pid" id="pid" value="8656">
+            <input type="hidden" name="comeID" id="comeID" value="">
+            <a id="submitLeaveword" class="btn_tj" style="color: #000000;">提交留言</a></form>
+    </div>
+</section>
+<!--留言板代码END -->
+<!--版权-->
+<style>#cnzz_stat_icon_1255603889{ display:none; }</style>
+<div style="margin:0 auto;width:180px;color:#ccc;">投资有风险，选择需谨慎</div>
+<style>.footercopy { color: #666666; line-height: 23px; text-align: center; font-weight: bold; margin-top:7px; }</style>
+<!--footer开始-->
+<div class="footercopy" style="color:#ccc"></div>
+<!-- <div class="footer_dz">Copyright © 2016-2017 北京创世新齐广告传媒有限公司, All Rights Reserved 京ICP备14040961号-14</div> -->
+<!--footer结束-->
+<div style="height:60px;">&nbsp;</div>
+<script src="../../static/qgjhiphone_files/urltrack.js" type="text/javascript"></script>
+<!-- NewCount Start --></script>
+<!-- NewCount End -->
+<script type="text/javascript">
+    //定位
+    function focu() {
+        //document.getElementById("name").focus()
+        document.querySelector("#Table").scrollIntoView();
+    }
+</script>
+<script src="../../static/qgjhiphone_files/countWapPV.html"></script>
+<!--版权END-->
+<!--底部浮动代码-->
+<script type="text/javascript">(function() {
+    var domain = window.location.host;
+    //百度账户底部浮动违规，所以百度账户不展示底部浮动
+    if (domain != '3w.i3zw.net' && domain != '3w.28i0.com') {
+        if (projectID == '9105' || projectID == '9226' || projectID == '9053' || projectID == '9286' || projectID == '9573' || projectID == '9199' || projectID == '9252' || projectID == '9568' || projectID == '9220' || projectID == '9526' || projectID == '8823' || projectID == '9620' || projectID == '9702' || projectID == '8725' || projectID == '9487' || projectID == '9751' || projectID == '9755' || projectID == '9892' || projectID == '9806') {
+            var url = "http://3w.28s9.com/html/footer/project_wp_fd_20160304.php?pid=" + projectID + "&host=" + window.location.host + "&random=" + Math.random();
+            document.write('<sc' + 'ript src="' + url + '" ></scri' + 'pt>');
+        }
+    } else {
+        $(".footercopy").last().next('div').remove();
+    }
+
+    //使用电话的
+    if (projectID == '9414' || projectID == '9366' || projectID == '9348') {
+        var url = "http://3w.28s9.com/html/footer/project_wp_fd_20160304.php?pid=" + projectID + "&host=" + window.location.host + "&tel=4000229155" + "&random=" + Math.random();
+        document.write('<sc' + 'ript src="' + url + '" ></scri' + 'pt>');
+    } else if (projectID == '9502' || projectID == '9415' || projectID == '9408' || projectID == '9367' || projectID == '9318') {
+        var url = "http://3w.28s9.com/html/footer/project_wp_fd_20160304.php?pid=" + projectID + "&host=" + window.location.host + "&tel=4009901028" + "&random=" + Math.random();
+        document.write('<sc' + 'ript src="' + url + '" ></scri' + 'pt>');
+    }
+})();</script>
+<!--底部浮动代码 END-->
+<script>
+    (function() {
+        document.getElementById("iconDivMain2").style.display = "none";
+        document.getElementById("iconDivMain2").style.display="inline";
+        var _53code = document.createElement("script");
+        _53code.src = "https://tb.53kf.com/code/code/f9f013f0e857675215f761b2df371f624/3";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(_53code, s);
+    })();
+
+</script>
+<script id="hz6d_flp_jquery" src="../../static/qgjhiphone_files/jquery-1.js" charset="utf-8" type="text/javascript"></script>
+</body>
+
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>一碗招牌牛肉粉</title>
+</head>
+<link rel="stylesheet" href="https://vip.media-linkage.com/template/controls/1/pc/lyb_style.css" type="text/css">
+<link rel="stylesheet" href="https://vip.media-linkage.com/template/controls/35/pc/style.css" type="text/css">
+<style>
+    /* 公共样式 */
+    body,
+    div,
+    dl,
+    dt,
+    dd,
+    ul,
+    ol,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    pre,
+    code,
+    form,
+    fieldset,
+    legend,
+    input,
+    textarea,
+    p,
+    blockquote,
+    th,
+    td {
+        margin: 0;
+        padding: 0;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    fieldset,
+    img {
+        border: 0;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    input,
+    button {
+        border: none;
+        outline: none;
+    }
+
+    /* 网站变灰效果 */
+    /* html{filter: grayscale(1);} */
+    body {
+        position: relative;
+    }
+
+    /* 内容超出隐藏滚动条 */
+    /* body::-webkit-scrollbar{
+    display: none;
+} */
+    input[type=radio] {
+        cursor: pointer
+    }
+
+    input[type=checkbox] {
+        cursor: pointer
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    a,
+    a:hover {
+        text-decoration: none;
+    }
+
+    body {
+        text-align: center;
+    }
+
+    .inputText {
+        width: 70%;
+        height: 40px;
+        border: 1px solid #eee;
+        margin: 10px 0;
+    }
+
+    input::-webkit-input-placeholder {
+        color: #000;
+    }
+
+    .footer {
+        position: fixed;
+        /* 使按钮固定于可视窗口的底部  // 设置固定高度*/
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background: orange;
+        width: 35.5%;
+        margin: auto;
+        border-radius: 5px;
+    }
+
+    .footercopy {
+        font-size: 12px;
+        color: #666666;
+        line-height: 20px;
+        text-align: center;
+        margin-top: 7px;
+    }
+    .img-box{
+        width: 75%;
+        margin: 0 auto;
+    }
+    .title-box{
+        margin: 10px 0;
+    }
+    .mess-box {
+        width: 95%;
+        margin: auto;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    .mess-box .mess-l{
+        width: 40%;
+        padding: 10px;
+        /* border: 1px solid black; */
+    }
+    .mess-box .mess-l .item {
+        width: 100%;
+        text-align: left;
+        padding: 10px;
+        border-bottom: 1px dashed #999;
+    }
+    .mess-box .mess-l .item:last-child{
+        border: none;
+    }
+    .mess-box .mess-l .item h2{
+        margin-bottom: 10px;
+    }
+    .mess-box .mess-r{
+        width: 56%;
+    }
+  
+    .submit-box{
+        margin-top: 20px; 
+        background:#FFFFFF; 
+        width:160px;
+        height:40px;
+        font-size:15px;
+        border: 2px solid #000;
+    }
+    .tianchong{
+        width: 100%;
+        height: 80px;
+    }
+</style>
+
+<body>
+    <div id="t" style="box-sizing: border-box;min-height: 100%;width: 80%;margin: auto;">
+        <div class="img-box">
+            <!-- 引入头图片 -->
+            <img src="http://47.56.105.7:8914/static/niuroufen/img/niuroufenPcTop.jpg" />
+        </div>
+        <div style="height: 300px;width: 75.5%;margin: auto;text-align:center;">
+            <!--        <input type="submit" style="margin-top: 20px; background:#FFFFFF; width:160px;height:40px;font-size:15px;" value="获取更多加盟资料"/>-->
+
+            <div style="width:95%;margin: auto;height: 80%" id="Table1">
+                <!--                <form id="myform" onsubmit="" role="form" method="post">-->
+                <div style="padding-top: 20px;">
+                    <input type="text" name="name" id="name1" class="inputText" placeholder="姓名" />
+                    <br />
+                    <input type="text" name="phone" id="phone1" class="inputText" placeholder="手机号" />
+                    <br />
+                    <input type="hidden" name="isPc" id="isPc1" value="1" />
+                    <input type="submit"
+                        class="submit-box"
+                        value="获取更多加盟资料" onclick="submitFrom1()" />
+                </div>
+                <!--                </form>-->
+            </div>
+            <!-- 引入提交 -->
+        </div>
+        <div class="img-box">
+            <img src="http://47.56.105.7:8914/static/niuroufen/img/niuroufenPcBody.jpg"  />
+            <!--  引入图片 -->
+        </div>
+
+<!--        <div style="width: 75%;margin: auto;text-align:center;background:#DD2727;margin-top:-14px" id="Table">-->
+<!--			<div style="width: 60%;margin: auto;text-align:center;background:#FCFCFC;">-->
+<!--            &lt;!&ndash;        <input type="submit" style="margin-top: 20px; background:#FFFFFF; width:160px;height:40px;font-size:15px;" value="获取更多加盟资料"/>&ndash;&gt;-->
+<!--                <div class="title-box">-->
+<!--                    <h1 style="font-size: 40px;margin: auto;background:#DD2727;margin-top:-14px;"><span style="color: #ffffff">更多特惠详情支持政策，欢迎留言咨询</span></h1>-->
+<!--                </div>-->
+<!--                <div class="title-box"style="background:#FFBB77;margin-top:-14px;">-->
+<!--&lt;!&ndash;					<h1 style="background:#FFBB77;margin-top:-14px;">如果您对该项目感兴趣，请使用<span style="color:#00EC00; width: 75%;">免费咨询</span>或<span style="color: #00EC00">留言</span></h1>&ndash;&gt;-->
+<!--                    <img src="https://vip.media-linkage.com/template/guestbook/1/title_img.png">-->
+<!--                </div>-->
+<!--				<div class="mess-box">-->
+<!--					<div class="mess-l">-->
+<!--						<div class="item">-->
+<!--							<h2 style="font-size: 14px; font-weight: bold;color: #333333;border: none;">知名的创业招商网站</h2>-->
+<!--                            <dd style="font-size: 14px;color: #333333;">每天有数十万创业者,通过商机网寻找合适的创业项目;</dd>-->
+<!--						</div>-->
+<!--						<div class="item">-->
+<!--							<h2 style="font-size: 14px; font-weight: bold;color: #333333;">事实和口碑胜于一切</h2>-->
+<!--                            <dd style="font-size: 14px;color: #333333;">18万创业者通过商机网找项目迈出成功创业第一步;</dd>-->
+<!--						</div>-->
+<!--						<div class="item">-->
+<!--							<h2 style="font-size: 14px; font-weight: bold;color: #333333;">诚信的商机发布平台</h2>-->
+<!--                            <dd style="font-size: 14px;color: #333333;">我们只推荐拥有合法资质、证照齐全诚信经营的项目！</dd>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					&lt;!&ndash;                <form id="myform" onsubmit="" role="form" method="post">&ndash;&gt;-->
+<!--					<div class="mess-r">-->
+<!--                        <div style="    background: url(http://vip.media-linkage.com/template/guestbook/1/back_name.png) no-repeat left center #fff;width: 80%;">-->
+
+<!--						    <input  type="text" name="name" id="name" class="inputText"  placeholder="姓名" />-->
+<!--                        </div>-->
+<!--                        <div style="    background: url(http://vip.media-linkage.com/template/guestbook/1/back_phone.png) no-repeat left center #fff;width: 80%;">-->
+<!--                            <input type="text" name="phone" id="phone" class="inputText" placeholder="手机号" />-->
+<!--                        </div>-->
+<!--						<input type="hidden" name="isPc" id="isPc" value="1" />-->
+<!--						<input type="submit"-->
+<!--                             style="width: 50%;background:#DD2727;"-->
+
+<!--							class="submit-box"-->
+<!--							value="获取更多加盟资料" onclick="submitFrom()" />-->
+<!--					</div>-->
+<!--					&lt;!&ndash;                </form>&ndash;&gt;-->
+<!--				</div>-->
+<!--				</div>-->
+<!--            <div class="footercopy">版权：智数互动科技（深圳）有限公司 投资有风险需谨慎</div>-->
+<!--            &lt;!&ndash; 引入提交 &ndash;&gt;-->
+<!--        </div>-->
+
+
+        <div class="ggy_lyb" id="Table" >
+            <div class="ggy_txt" >
+<!--                <script type="text/javascript" src="http://vip.media-linkage.com/guestbook/createform?t=1&amp;d=PC&amp;guid=d58bf8e4-14ef-4c85-8623-7b04f57b470c"></script><script type="text/javascript" src="https://vip.media-linkage.com/template/js/jquery.js"></script>-->
+                <link rel="stylesheet" href="https://vip.media-linkage.com/template/guestbook/1/pclyb_style.css" type="text/css">
+                <!-- 留言板 -->
+                <div class="message" id="message" >
+                    <div class="top">
+                        <img src="https://vip.media-linkage.com/template/guestbook/1/title_img.png"></div>
+                    <div class="box">
+                        <!-- 未开通 begin -->
+                        <div class="left_wkt">
+                            <dl class="meg_dl">
+                                <dt style="border:none">知名的创业招商网站</dt>
+                                <dd>每天有数十万创业者,通过商机网寻找合适的创业项目;</dd>
+                                <dt>事实和口碑胜于一切</dt>
+                                <dd>18万创业者通过商机网找项目迈出成功创业第一步;</dd>
+                                <dt>诚信的商机发布平台</dt>
+                                <dd>我们只推荐拥有合法资质、证照齐全诚信经营的项目!</dd>
+                            </dl>
+                        </div>
+                        <!-- 未开通 end -->
+                        <div class="box_right">
+<!--                            <form action="https://vip.media-linkage.com/guestbook/save/" method="post" name="frmguestbook" onsubmit="return checkfrmguestbook()" accept-charset="utf-8">-->
+                                <input type="hidden" name="regroup" id="regroup" value="abf9d863995551f2d94ada2e6d6c326a47c5828c038006374aeb9ebc795514bb8a59e2610eb9e768e99958afe52fe7755242b796c4047660f331247476990253vCZTs2aFKVqZzcoVDjzvnwTuQ9zjAv00c8+BEp1b9BlTpHHLf0QVOOTNomC08Z0tlLYRHFn9OVJYA22Z7aQBKeiHYuw36URIGdDhTHn23/Vx+wtMgrnVo4zn/uJbLY3d">
+                                <div class="inp_box inp_name"><input type="text" placeholder="请输入您的真实姓名，如：李明" class="inp_text" name="name" id="name" required=""></div>
+                                <div class="inp_box inp_phone"><input type="text" placeholder="请输入您的电话" class="inp_text" name="mobile" id="mobile" required=""></div>
+<!--                                <div class="inp_box inp_address"><input type="text" placeholder="请输入您的真实地址" name="address" id="address" class="inp_text"></div>-->
+<!--                                <div class="lynr">-->
+<!--                                    <textarea placeholder="请输入您留言的内容" id="content" name="content"></textarea>-->
+<!--                                </div>-->
+                                <input type="hidden" name="hverification" id="hverification" value="37a1f4d7ac1c83371a92faf534d203988bca20ac573f7c7cbe4018921433a34916d0bc18ae7ff78e5e91d4d044f8252a63fcc2c6e0a9df540f4b48f0ab686856P7WPCwHpQjVMJjMfh7I4oJEY7OpxYmtGCL7pmxw9Owd6+QoVfHAH8UFv1cGF0Ztyi/KDfzPDntx8EXfnigcle3KpCm+cLpjy2JPMuIkd8JqgUH/sYw0LLt2QcDgZipwyrrhZAH5xu26vpKr06MAgIjpA6w07qSJ9CDJdrsFEgTPC3E/CjYm7gVz8a6Tyb3D20eZCNRJ2xaBi3tbU6szxTaURkO7nJDBcUr2rLyNlzlRQZU55/wZKoTZ9QicwuI4fFhIRow0lCibdYsdWnHL+hw==">
+                                <input type="hidden" name="uuid" id="uuid" value="9E2BA505-C556-01F8-2670-72A56C7D5A64">
+                                <input type="hidden" name="visitid" id="visitid" value="199192">
+                                <input type="hidden" name="refurl" id="refurl" value="">
+                                <input type="submit" value="提交留言" class="tj_ly">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end-->
+<!--                    <script type="text/javascript" src="https://vip.media-linkage.com/template/js/sem-pc.js"></script><script src="https://tj.story18.com/Count.php?PageUrl=http%3A//fgvc.bd47.zsld33.com/web/2305/23174/37530/index_tpl.htm%3F&amp;ReferUrl="></script>-->
+        </div>
+
+        <input type="hidden" th:value="${msg}" id="msg">
+
+        <div class="tianchong"></div>
+        <div class="footer" onclick="focu()">
+            <p style="font-size:25px;color:#f0f0f0;height:50px;line-height: 20px;line-height: 60px;">点
+                &nbsp;击
+                &nbsp;获
+                &nbsp;取
+                &nbsp;更
+                &nbsp;多
+                &nbsp;加
+                &nbsp;盟
+                &nbsp;资
+                &nbsp;料</p>
+        </div>
+    </div>
+    <!--<div style="margin-left: 0%;width: 8%; border-radius:5px; position: fixed;background:#af1514;  bottom: 73%; height: 75px; font-size: 0;  z-index: 100; " onclick="focu()">-->
+    <!--   -->
+    <!--</div>-->
+</body>
+<script>(function () { var _53code = document.createElement("script"); _53code.src = "https://tb.53kf.com/code/code/593c6c3a360a02cd8b2d2ccfa25f771d8/1"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(_53code, s); })();</script>
+<script src="http://47.56.105.7/static/assets/js/jquery.min.js"></script>
+<script>
+
+    function focu() {
+        //document.getElementById("name").focus()
+        document.querySelector("#Table").scrollIntoView();
+    }
+
+    function submitFrom() {
+
+        var name = $("#name").val();    // 获取id为username的<input>框数据
+        var phone = $("#phone").val();    // 获取id为password的<input>框数据
+
+        // Ajax提交数据
+        $.ajax({
+            url: "http://47.56.105.7/hr/niuroufen/submit",    // 提交到controller的url路径
+            type: "post",    // 提交方式
+            data: { "name": name, "phone": phone, "isPc": 1 },  // data为String类型，必须为 Key/Value 格式。
+            dataType: "json",    // 服务器端返回的数据类型
+            success: function (data) {    // 请求成功后的回调函数，其中的参数data为controller返回的map,也就是说,@ResponseBody将返回的map转化为JSON格式的数据，然后通过data这个参数取JSON数据中的值
+                alert(data);
+            }, error(data) {
+                alert(data.responseText);
+            }
+        });
+    }
+
+
+
+    function submitFrom1() {
+
+        var name = $("#name1").val();    // 获取id为username的<input>框数据
+        var phone = $("#phone1").val();    // 获取id为password的<input>框数据
+
+        // Ajax提交数据
+        $.ajax({
+            url: "http://47.56.105.7/hr/niuroufen/submit",    // 提交到controller的url路径
+            type: "post",    // 提交方式
+            data: { "name": name, "phone": phone, "isPc": 1 },  // data为String类型，必须为 Key/Value 格式。
+            dataType: "json",    // 服务器端返回的数据类型
+            success: function (data) {    // 请求成功后的回调函数，其中的参数data为controller返回的map,也就是说,@ResponseBody将返回的map转化为JSON格式的数据，然后通过data这个参数取JSON数据中的值
+                alert(data);
+            }, error(data) {
+                alert(data.responseText);
+            }
+        });
+    }
+</script>
+
+
+
+
+</html>

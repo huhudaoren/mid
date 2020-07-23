@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<style>
+    body{ text-align:center;
+        font-size:0;
+    }
+    .inputText{
+        border-left-width:0px;
+        border-top-width:0px;
+        border-right-width:0px;
+        width:90%; height:60px;
+    }
+    input::-webkit-input-placeholder{
+        color: #000;
+    }
+    .footer{
+        position:fixed; /* 使按钮固定于可视窗口的底部  // 设置固定高度*/
+        bottom :0;
+        left :0;
+        right :0;
+        height:60px ;
+        background :orange;
+        width: 35.5%;
+        margin: auto;
+        border-radius:5px;
+    }
+
+</style>
+<body>
+<div id="t" style="padding-bottom: 60px;box-sizing: border-box;min-height: 100%;">
+    <div>
+        <!-- 引入头图片 -->
+        <img src="http://47.56.105.7:8914/static/pcHader.jpg" width="75.5%"/>
+    </div>
+    <div style="margin-left: auto;">
+        <img src="http://47.56.105.7:8914/static/jiajuPc.jpg"  width="75.5%"/>
+        <!--  引入图片 -->
+    </div>
+
+
+    <div style="height: 300px;width: 75.5%;margin: auto;text-align:center;">
+<!--        <input type="submit" style="margin-top: 20px; background:#FFFFFF; width:160px;height:40px;font-size:15px;" value="获取更多加盟资料"/>-->
+
+            <div style="width:95%;margin: auto;height: 80%" id="Table">
+<!--                <form id="myform" onsubmit="" role="form" method="post">-->
+                    <div style="padding-top: 20px;" >
+                        <input type="text" name="name" id="name" class="inputText" placeholder="姓名" />
+                        <br />
+                        <input type="text" name="phone" id="phone" class="inputText" placeholder="手机号" />
+                        <br />
+                        <input type="hidden" name="isPc" id="isPc" value="1" />
+                        <input type="submit" style="margin-top: 20px; background:#FFFFFF; width:160px;height:40px;font-size:15px;" value="获取更多加盟资料"  onclick="submitFrom()"/>
+                    </div>
+<!--                </form>-->
+            </div>
+        <!-- 引入提交 -->
+    </div>
+    <div>
+        <!-- 引入底部 -->
+        <img src="http://47.56.105.7:8914/static/pcFloat.png" width="75.5%"/>
+    </div>
+    <input type="hidden" th:value="${msg}" id="msg">
+
+
+    <div class="footer" onclick="focu()">
+        <p style="font-size:25px;color:#f0f0f0;height:50px;line-height: 20px;">点
+            &nbsp;击
+            &nbsp;获
+            &nbsp;取
+            &nbsp;更
+            &nbsp;多
+            &nbsp;加
+            &nbsp;盟
+            &nbsp;资
+            &nbsp;料</p>
+    </div>
+</div>
+<iframe name="form" id="form" style="display:none"></iframe>
+<!--<div style="margin-left: 0%;width: 8%; border-radius:5px; position: fixed;background:#af1514;  bottom: 73%; height: 75px; font-size: 0;  z-index: 100; " onclick="focu()">-->
+<!--   -->
+<!--</div>-->
+</body>
+
+
+
+<script>(function() {var _53code = document.createElement("script");_53code.src = "https://tb.53kf.com/code/code/12f43c7674dfb9042395e1ec6a764a9d/6";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(_53code, s);})();</script>
+<!--<script href="http://47.56.105.7/static/assets/js/jquery.js"></script>-->
+<!--<script href="http://47.56.105.7/static/assets/js/jquery.min.js"></script>-->
+<script src="http://47.56.105.7/static/assets/js/jquery.min.js"></script>
+<script>
+
+    function focu() {
+        //document.getElementById("name").focus()
+        document.querySelector("#Table").scrollIntoView();
+    }
+
+    function submitFrom() {
+
+        var name = $("#name").val();    // 获取id为username的<input>框数据
+        var phone = $("#phone").val();    // 获取id为password的<input>框数据
+
+        // Ajax提交数据
+        $.ajax({
+            url: "http://47.56.105.7/hr/jiaju/submit",    // 提交到controller的url路径
+            type: "post",    // 提交方式
+            data: {"name": name, "phone": phone,"isPc":1},  // data为String类型，必须为 Key/Value 格式。
+            dataType: "json",    // 服务器端返回的数据类型
+            success: function (data) {    // 请求成功后的回调函数，其中的参数data为controller返回的map,也就是说,@ResponseBody将返回的map转化为JSON格式的数据，然后通过data这个参数取JSON数据中的值
+               alert(data);
+            },error(data){
+                alert(data.responseText);
+            }
+        });
+    }
+</script>
+</html>

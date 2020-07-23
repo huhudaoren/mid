@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"><script id="hz6d_send_acc" src="../../static/niuhwap_files/sendacc.html" charset="utf-8"></script><script id="ivt_script" src="../../static/niuhwap_files/kf_ivt_new.php" charset="utf-8"></script>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title> 牛华 </title>
+    <style>
+        body,h1,h2,h4,h5,dd,ul,p,form,textarea,th,td,select{ margin: 0;padding: 0;}
+        em { font-style: normal;}
+        li {list-style: none;}
+        a {text-decoration: none;color:#333333;}
+        table  img {border: none;vertical-align: top; display:block; border:0px}
+        table {border-collapse: collapse;}
+        input,textarea {outline: none;}
+        textarea {resize: none;overflow: auto;}
+        body {font-size: 12px;font-family: "微软雅黑";}
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+<!--<div id="div_company_mini" style="line-height: 0; font-size: 0px; position: fixed; right: 0px; bottom: 30px; width: 360px; height: 460px; z-index: 1000000; cursor: move; overflow: visible;">-->
+    <!--<div class="mini-btn mini-btn2" id="mini-btn" onclick="show_floatWindow();" style="cursor:pointer;display:none;position:absolute;right:0; bottom:0;z-index:-1;width: 42px;border-radius:2px; overflow: hidden; background: #e80707;-webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, .06), 0 2px 32px rgba(0, 0, 0, .16)!important;box-shadow: 0 1px 6px rgba(0, 0, 0, .06), 0 2px 32px rgba(0, 0, 0, .16)!important;">-->
+        <!--<div class="mini-btn-info" style="position: relative;width: 42px;height: 42px;">-->
+            <!--<span style="width:100%;height:100%;position:absolute;left:0;top:0;z-index:1;background: center center no-repeat;background-image: url(https://www24.53kf.com/style/chat/new2017/image/png/img-info24.png);background-image: url(https://www24.53kf.com/style/chat/new2017/image/svg/img-info24.svg), none;"></span>-->
+            <!--<span style="width:100%;height:100%;position:absolute;left:0;top:0;background:#000;opacity:0.2;filter:alpha(opacity=20);">-->
+                <!---->
+            <!--</span>-->
+            <!--<span id="info-num" style="display:none;position: absolute;top: 5px;right: 5px;z-index:10;height: 14px;min-width: 14px;line-height: 14px;border-radius: 7px;background: red;font-size: 12px;color: #FFFFFF;letter-spacing: 0.47px;text-align: center;">0</span></div><div class="mini-btn-middle" style="font-weight:normal;line-height: 20px;padding: 8px 13px 16px;font-size: 16px;color: #FFFFFF;letter-spacing: 3.83px;word-wrap: break-word;text-align: center;">免费获取最新项目资料!</div></div><div id="iframe_company_mini_div" style="font-size: 0;background-color:#fff;border-radius:2px;overflow:hidden;width:100%;height:460px;box-shadow:0 5px 40px rgba(0,0,0,.16)!important;-webkit-box-shadow:0 5px 40px rgba(0,0,0,.16)!important;"><h6 class="pc-visitor-header" style="width:100%;box-sizing:border-box;background: #e80707 no-repeat 10px;margin:0;padding:0;padding-left: 10px;font-size: 14px;color: #fff;height: 36px;line-height: 36px;position: relative;font-weight: normal;padding-right: 72px;"><img style="max-width: 80px;width:auto;height:24px;float: left;margin-top: 6px;border-radius:2px;" src="../../static/niuhwap_files/mobile_53kf_1555494662.jfif"><label style="background: none; padding: 0; margin: 0; border: 0; line-height:36px;cursor:move;font-weight:normal;cursor:move;color: #fff;display: inline-block;float: left;max-width:60%;margin-left: 5px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;" class="header-company">牛华老阿婆【总部】</label><span onclick="max_from_company_mini(this);" title="最大化" class="pc-new pc-title-btn" style="background: url(https://www24.53kf.com/style/chat/new2017/image/png/newWindow.png) center no-repeat;background-image: url(https://www24.53kf.com/style/chat/new2017/image/svg/newWindow.svg),none;position: absolute;width: 36px;height: 36px;cursor: pointer;right: 40px;top: 0;fill: #F08000;"></span><span onclick="hide_floatWindow();" title="最小化" class="pc-hide pc-title-btn" style="background: url(https://www24.53kf.com/style/chat/new2017/image/png/to-minWindow.png) center no-repeat;background-image: url(https://www24.53kf.com/style/chat/new2017/image/svg/to-minWindow.svg),none;position: absolute;width: 36px;height: 36px;cursor: pointer;right: 0px;top: 0;"></span></h6><iframe id="iframe_company_mini" style="height:424px;width:100%;margin:0;padding:0;visibility: inherit;opacity:1;position:inherit;" src="../../static/niuhwap_files/webCompany.html" frameborder="0"></iframe></div></div><div id="kfivtwin" style="display: none; overflow: hidden;"><div id="acc_title" style="cursor: pointer; height: 23px; width: 100%; position: relative; line-height: 23px; overflow: visible;">  <div style="float:left;width:8px; background:url(https://www24.53kf.com/img/new06/fu-t-l.gif) no-repeat; height:23px;"></div>  <div style="float:left;width:384px;height:23px; background:url(https://www24.53kf.com/img/new06/fu-t-c.gif) repeat-x ;line-height:23px;color:#ffffff;text-align:left;">53KF邀请</div>  <div style="float:left;width:8px; background:url(https://www24.53kf.com/img/new06/fu-t-r.gif) no-repeat; height:23px;"></div></div><div style="clear:both;width:400px;background:url(https://www24.53kf.com/img/ivt/53kf01bg.gif);height:auto; overflow:hidden;">  <div style="float:left;height:100%;width:100px;background: url(https://www24.53kf.com/img/ivt/53kf01bg.gif) left;   text-align:center;"><img style="DISPLAY: inline;margin-top:10px;cursor:pointer;" src="../../static/niuhwap_files/ivt_cn.gif"></div>  <div style="float:right;height:auto;*height:auto;*height:auto !important;width:300px;*width:298px;* width:295px !important; background:url(https://www24.53kf.com/img/ivt/53kf01bg.gif) right; text-align:left;">    <div style="clear:both;width:95%;padding-top:10px; text-align:left;line-height:17px;font-family:tahoma;font-size:12px;color:#000000; height:auto; overflow:hidden;">		欢迎您！ <br><span id="hz6d_acc_content">acc_content</span></div>    <div style="clear:both;width:95%;margin-top:5px;text-align:right;"><button id="hz6d_53kf_invite_acc" onclick=';onliner_zdfq=2;window.open("talk_openurl","_blank","height=473,width=703,top=200,left=200,status=yes,toolbar=no,menubar=no,resizable=yes,scrollbars=no,location=no,titlebar=no");hidden_ivt();' style="DISPLAY: inline; cursor:pointer;height:24px;width:76px;border:0px;background:none;"><img style="DISPLAY: inline;" src="../../static/niuhwap_files/fu-button1_cn.gif"></button>&nbsp;&nbsp;<button onclick=";onliner_zdfq=3;hidden_ivt();" style="DISPLAY: inline;cursor:pointer;height:24px;width:76px;border:0px;background:none;"><img style="DISPLAY: inline;" src="../../static/niuhwap_files/fu-button2_cn.gif" id="hz6d_53kf_invite_hid"></button></div></div></div><div style="height:8px;width:100%;clear:both; line-height:8px; float:left;">  <div style="height:8px;width:8px;float:left; background:url(https://www24.53kf.com/img/new06/fu-b-l.gif) no-repeat;line-height:8px;"></div>    <div style="height:8px;width:384px;float:left; background:url(https://www24.53kf.com/img/new06/fu-b-c.gif) repeat-x;line-height:8px;"></div>    <div style="height:8px;width:8px;float:right; background:url(https://www24.53kf.com/img/new06/fu-b-r.gif) no-repeat;line-height:8px;"></div></div></div><div id="kfivteffect" style="display: none; position: absolute; width: 0px; height: 0px; overflow: hidden; border: 1px solid rgb(27, 136, 208); background: rgb(214, 238, 253) none repeat scroll 0% 0%; z-index: 10087;"></div><iframe id="kfiframe" src="" style="display: none; overflow: hidden;" scrolling="no" frameborder="0"></iframe><div id="iconDiv1" style="height: auto; width: auto;"><iframe style="position:absolute;z-index:7998;width:0px;height:0px;top:0px;left:0px;" frameborder="0"></iframe><div id="iconDivMain1" style="z-index: 10085; left: 1327px; top: 124.5px; width: 192px; height: 313px; overflow: hidden; position: absolute;"><div id="KFLOGO" class="Lelem" maxwidth="200" maxheight="400" minwidth="100" minheight="100" style="width: 192px; height: 313px; position: relative; z-index: 10000; overflow: hidden; cursor: pointer;">														<div class="Lelem" type="img" eld_img="https://www24.53kf.com/img/upload/10200136/zdypic/icon_on_102001361561364243.png" onclick="hz6d_is_exist('setIsinvited()%3Bwindow.open(#liyc#https%3A%2F%2Fwww24.53kf.com%2FwebCompany.php%3Fkf_sign%3DTMwMDMTU3MI0ODEwNzU5OTY5MjcxMDE1NzIyMDAxMzY%3D%26arg%3D10200136%26style%3D1%26language%3Dzh-cn%26charset%3DGBK%26kflist%3Doff%26kf%3Dnhlap985%40163.com%26zdkf_type%3D1%26lnk_overflow%3D0%26callback_id6ds%3D10329305%26referer%3Dhttp%253A%252F%252F3w.mj2812.cn%252Fwp%252Fniuhwap%252F%26keyword%3D%26tfrom%3D1%26tpl%3Dcrystal_blue%26uid%3D9fc3ca6a5b41d0f5f997e3561199c219%26is_group%3D%26is_group%3D#liyc#%2C%20#liyc#_blank#liyc#%2C%20#liyc#height%3D600%2Cwidth%3D800%2Ctop%3D50%2Cleft%3D200%2Cstatus%3Dyes%2Ctoolbar%3Dno%2Cmenubar%3Dno%2Cresizable%3Dyes%2Cscrollbars%3Dno%2Clocation%3Dno%2Ctitlebar%3Dno#liyc#)');" style="display: block; cursor: pointer; position: absolute; left: 0px; top: 0px; width: 190px; height: 310px; z-index: 10001;"><img src="../../static/niuhwap_files/icon_on_102001361561364243.png" style="width: 190px; height: 310px;"></div></div></div></div>-->
+<div  style="line-height: 0; font-size: 0px; position: fixed;  bottom: 0px; width: 100%; height: 0px; z-index: 1000000; cursor: move; overflow: visible;">
+    <div class="mini-btn mini-btn1" id="mini-btn" style="width: 100%; white-space: nowrap; cursor: pointer; display: block; position: absolute; right: 0px; bottom: 0px; z-index: -1;background-color: #FF9420; height: 42px; border-radius: 2px; overflow: hidden; background: rgb(31, 31, 31) none repeat scroll 0% 0%; box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 6px, rgba(0, 0, 0, 0.16) 0px 2px 32px !important;">
+
+        <button style="width: 51%; border:none;margin:0;padding: 0;outline: none;background-color:#FF9420;" onclick="focu()" >
+            <div class="mini-btn-info" style="position: relative;width: 14%;height: 42px;display:inline-block;">
+                <span style="width:100%;height:100%;position:absolute;left:0;top:0;z-index:1;background: center center no-repeat;background-color: #FF9420;background-image: url(https://www5c1.53kf.com/style/chat/new2017/image/png/img-info24.png);background-image: url(https://www5c1.53kf.com/style/chat/new2017/image/svg/img-info24.svg), none;"></span>
+                <span style="width:100%;height:100%;position:absolute;left:0;top:0;background:#000;opacity:0.2;filter:alpha(opacity=20);background-color: #FF9420;"></span>
+                <span id="info-num" style="display:none;position: absolute;top: 5px;right: 5px;z-index:10;height: 14px;min-width: 14px;line-height: 14px;border-radius: 7px;background: red;font-size: 12px;background-color: #FF9420;color: #FFFFFF;letter-spacing: 0.47px;text-align: center;">0</span></div>
+            <div style="width: 70%;font-weight:normal;display:inline-block;vertical-align:top;line-height: 42px;padding: 0 8px;font-size: 16px;color: #FFFFFF;letter-spacing: 0.83px;word-break: break-all;text-align: center;background-color: #FF9420;" onclick=""><span>立即留言</span></div>
+        </button>
+
+        <div class="mini-btn-window" style="background-color: #FF363A;display:inline-block;width: 12%;height: 42px;background: center center no-repeat;background-image: url(../../static/qgjhiphone_files/ipone1.svg);background-color: #FF363A;"><a href="https://www24.53kf.com/webCompany.php?arg=10200136&kf_sign=TMwNTMTU3MIxMDEwNzU5OTY5MjcxMDE1NzIyMDAxMzY%253D&style=4" style="color:#FFFFFF"></a></div>
+        <div  style="width: 37%;font-weight:normal;display:inline-block;vertical-align:top;background-color: #FF363A;line-height: 42px;padding: 0 8px;font-size: 16px;color: #FFFFFF;letter-spacing: 0.83px;word-break: break-all;text-align: center;"><a href="https://www24.53kf.com/webCompany.php?arg=10200136&kf_sign=TMwNTMTU3MIxMDEwNzU5OTY5MjcxMDE1NzIyMDAxMzY%253D&style=4" style="color:#FFFFFF">免费咨询</a></div>
+    </div>
+</div>
+
+
+<script src="../../static/niuhwap_files/1"></script>
+<!-- 头部 -->
+<link href="../../static/niuhwap_files/wap_fd.css" rel="stylesheet" type="text/css">
+<link href="../../static/niuhwap_files/html5.css" rel="stylesheet" type="text/css">
+<script src="../../static/niuhwap_files/jquery.js" language="javascript" type="text/javascript"></script>
+
+<style>
+    @media screen and (max-device-width: 640px){ body {width: 100%;}}
+    @media screen and (min-width: 640px){ body {width: 640px;margin: 0 auto;}}
+    ul,li{ margin:0; padding:0; list-style:none}
+
+
+</style>
+
+
+
+
+
+<!-- 头部结束 -->
+<!--内容部分-->
+<table id="__01" width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+    <tbody><tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_01.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_02.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_03.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_04.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_05.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_06.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_07.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_08.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_09.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_10.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_11.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_12.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_13.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_14.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_15.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_16.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_17.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_18.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_19.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_20.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_21.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_22.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_23.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_24.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_25.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_26.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_27.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_28.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_29.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_30.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_31.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_32.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_33.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_34.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_35.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_36.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_37.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_38.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_39.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_40.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_41.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_42.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_43.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_44.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_45.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_46.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_47.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_48.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_49.jfif" alt="" width="100%"></td>
+    </tr>
+    <tr>
+        <td>
+            <img src="../../static/niuhwap_files/index_50.jfif" alt="" width="100%"> </td>
+    </tr>
+    </tbody></table>
+
+<div id="gbook"></div>
+
+<section>
+    <a id="gbook"></a>
+    <div class="msg_box" id="msg01">
+        <!--<span>本站隶属美国上市企业，您的个人信息不会被泄露！</span>-->
+        <p class="zs_box Table"  id="Table">温馨提醒：该项目已获诚信投资认证，请放心合作</p>
+        <form id="myform" action="/niuHSubmit" method="post">
+            <b class="hs_wz" id="name_flag"></b>
+            <p class="inputbox">
+                <b class="hs">*</b>
+                <label>姓名：</label>
+                <input name="userName" id="text_trueName" type="text" placeholder="如 张先生" class="input" onblur="checkNickname(this)"></p>
+            <b class="hs_wz" id="phone_flag"></b>
+            <p class="inputbox">
+                <b class="hs">*</b>
+                <label>手机：</label>
+                <input name="phone" id="text_telephone" type="text" placeholder="如 13696666888" class="input" onblur="checkPhone(this)"></p>
+            <b class="hs_wz"></b>
+            <p class="inputbox">
+                <b class="hs">*</b>
+                <label>回访：</label>
+                <input type="radio" value="0" checked="checked" name="timeQ">随时&nbsp;&nbsp;
+                <input type="radio" value="1" name="timeQ">上班时间&nbsp;&nbsp;
+                <input type="radio" value="2" name="timeQ">下班时间</p>
+            <input type="hidden" name="isPc" id="isPc" value="0">
+            <a id="submitLeaveword" onclick="document.getElementById('myform').submit();return false;" class="btn_tj" style="color: #000000;">提交留言</a>
+        </form>
+
+    </div>
+</section>
+
+<!--留言板代码END -->
+<!--版权-->
+<style>
+    #cnzz_stat_icon_1255603889{
+        display:none;
+    }
+</style>
+<div style="margin:0 auto;width:180px;color:#ccc;">投资有风险，选择需谨慎</div>
+<style>
+    .footercopy {
+        color: #666666;
+        line-height: 23px;
+        text-align: center;
+        font-weight: bold;
+        margin-top:7px;
+    }
+
+</style>
+<!--footer开始-->
+<div class="footercopy" style="color:#ccc"></div>
+<div class="footer_dz">Copyright © 智数互动科技(深圳)有限公司 </div>
+<input type="hidden" th:value="${msg}" id="msg">
+<!--footer结束-->
+<div style="height:60px;">&nbsp;</div>
+<script>(function() {var _53code = document.createElement("script");_53code.src = "https://tb.53kf.com/code/code/cd9b67ad2563dfc0c5dfd8e911eb1c343/4";
+    var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(_53code, s);})();</script>
+<script type="text/javascript" src="../../static/assets/js/jquery.min.js"></script>
+<script type="text/javascript">
+    //定位
+    function focu() {
+        //document.getElementById("name").focus()
+        document.querySelector("#Table").scrollIntoView();
+    }
+</script>
+<script>
+
+    $(document).ready(function() {
+        var data1=document.getElementById("msg").value;
+        if(data1 != '0'){
+            alert(data1);
+        }
+    });
+
+</script>
+
+</body></html>

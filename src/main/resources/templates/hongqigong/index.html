@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../static/css/AdminLTE.min.css" />
+		<link rel="stylesheet" href="../../static/css/bootstrap.min.css" />
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			.type {
+				width: 95%;
+				height: 100px;
+				border: 1px solid #ffffff;
+				margin: 0 auto;
+				border-radius: 50px;
+				background: #ffffff;
+				box-shadow: 0 3px 0.13333333rem 0 rgba(0, 0, 0, 0.15);
+				margin-bottom: 80px;
+			}
+			
+			.number {
+				font-weight: 700;
+				color: red;
+			}
+			/*电脑表单一*/
+			
+			.big-form {
+				color: #FFFFFF;
+				font-size: 40px;
+				margin-bottom: 40px
+			}
+			
+			.inputDate {
+				border-top-style: none;
+				border-left-style: none;
+				border-right-style: none;
+				border-color: #FFFFFF;
+				background: #b41116;
+				height: 80px;
+				outline: none;
+				font-size: 40px;
+			}
+			
+			.submit {
+				background-color: #490d0d;
+				width: 95%;
+				height: 120px;
+				display: block;
+				margin: 0 auto;
+				color: #ffffff;
+				font-size: 40px;
+				font-weight: 700;
+				margin-top: 60px;
+				border: 1px solid #490D0D;
+			}
+			
+			.submit:hover {
+				background: #490D0D;
+				color: #FFFFFF;
+				border: 1px solid #490D0D
+			}
+			/*手机表单1*/
+			
+			.bigs-form {
+				color: #FFFFFF;
+				font-size: 16px;
+				margin-bottom: 20px
+			}
+			
+			.inputDates {
+				border-top-style: none;
+				border-left-style: none;
+				border-right-style: none;
+				border-color: #FFFFFF;
+				background: #b41116;
+				height: 30px;
+				outline: none;
+				font-size: 16px;
+			}
+			
+			.submits {
+				background-color: #490d0d;
+				width: 95%;
+				height: 50px;
+				display: block;
+				margin: 0 auto;
+				color: #ffffff;
+				font-size: 16px;
+				font-weight: 700;
+				margin-top: 30px;
+				border: 1px solid #490D0D;
+			}
+			
+			.submits:hover {
+				background: #490D0D;
+				color: #FFFFFF;
+				border: 1px solid #490D0D
+			}
+			/*电脑底部导航栏*/
+			
+			.nav-li {
+				width: 35%;
+				height: 20%;
+				background-color: #181c1b;
+			}
+			
+			.li-ico {
+				color: #f6c200;
+				font-size: 60px;
+				text-align: center;
+				display: block;
+				padding-top: 10px;
+			}
+			/*手机底部导航栏*/
+			
+			.nav-lis {
+				width: 49.5%;
+				height: 20%;
+				background-color: #181c1b;
+			}
+			
+			.lis-ico {
+				color: #f6c200;
+				font-size: 20px;
+				text-align: center;
+				display: block;
+				padding-top: 10px;
+			}
+			
+			.nav-lis:hover {
+				background: #181C1B!important;
+				color: #F6C200
+			}
+			/*form*/
+			
+			form {
+				padding: 0 30px 0 30px
+			}
+			/*.phone:hover {
+				background: #f6c200!important;
+			}
+			*/
+			/*电脑表单2*/
+			
+			.small-formDiv {
+				width: 100%;
+				height: 625px;
+				background-image: url(../../static/img/bj2.jpg);
+				background-size: 100% 100%
+			}
+			
+			.smallForm {
+				width: 55%;
+				height: 350px;
+				float: right;
+				margin-top: 150px;
+			}
+			
+			.smallInput {
+				font-size: 24px;
+				border-top-style: none;
+				border-left-style: none;
+				border-right-style: none;
+				border-color: #FFFFFF;
+				background: transparent;
+				height: 40px;
+				outline: none;
+				color: #FFFFFF;
+			}
+			
+			.small-label {
+				font-size: 26px;
+				color: #FFFFFF;
+				height: 60px;
+			}
+			/*手机表单2*/
+			
+			.small-FormDivs {
+				width: 100%;
+				height: 425px;
+				background-image: url(../../static/img/bj1.jpg);
+				background-size: 100% 100%
+			}
+			
+			.smallForms {
+				width: 100%;
+				height: 300px;
+				float: right;
+			}
+			
+			.smallInputs {
+				font-size: 16px;
+				border-top-style: none;
+				border-left-style: none;
+				border-right-style: none;
+				border-color: #FFFFFF;
+				background: transparent;
+				height: 40px;
+				outline: none;
+				color: #FFFFFF;
+			}
+			
+			.small-labels {
+				font-size: 14px;
+				color: #FFFFFF;
+				height: 40px;
+			}
+			/*图片响应式*/
+
+			@media (min-width:480px) {
+				.main {
+					width: 100%;
+					margin: 0 auto
+				}
+			}
+
+			@media (min-width:768px) {
+				.main {
+					width: 70%;
+					margin: 0 auto
+				}
+			}
+
+			@media (min-width:992px) {
+				.main {
+					width: 70%;
+					margin: 0 auto
+				}
+			}
+
+			@media (min-width:1200px) {
+				.main {
+					width: 70%;
+					margin: 0 auto
+				}
+			}
+			/*消息框电脑*/
+			.phoneButton {
+				border: none;
+				background-color: #181c1b;
+				outline: none;
+				height: 45px;
+			}
+			.work {
+				position: fixed;
+				right: 15%;
+				bottom: 18%;
+				width: 700px;
+				height: 500px;
+				display: none;
+			}
+			/*消息框手机*/
+			
+			.works {
+				position: fixed;
+				right: 15%;
+				bottom: 11%;
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="main">
+			<div class="container-fluid">
+				<div class="row clearfix">
+					<div class="col-md-12 ">
+						<!--图片1-->
+						<img src="../../static/img/ct_01.png" alt="" class="img-responsive" style="width: 100%;" />
+						<div id="Table"></div>
+						<!--手机表单1-->
+						<form role="form" style="background-image: url(../../static/img/bj1.jpg);margin-top:-5px;" class="hidden-lg hidden-md">
+							<div class="form-group" style="margin-bottom: 40px;">
+								<label for="exampleInputEmail1" class="bigs-form">姓名(已加密,请放心填写)</label>
+								<input type="text" placeholder="请输入" class="form-control inputDates" id="name" />
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1" class="bigs-form">电话(已加密,请放心填写)</label>
+								<input type="text" placeholder="请输入" class="form-control inputDates" id="phone" />
+							</div>
+							<div class="form-group">
+								<input type="checkbox" id="check1" style="border:1px solid #FFFFFF;width: 20px;height: 20px;background-color: #FFFFFF;">
+								<span style="font-size: 16px;color:#FFFFFF">自动输入历史手机号《个人授权信息书》</span>
+							</div>
+							<button type="submit" class="btn btn-default submits" style="margin-bottom: 50px;">立即领取加盟资料</button>
+						</form>
+						<!--电脑表单1-->
+						<form role="form" style="background-image: url(../../static/img/bj1.jpg);" class="hidden-sm hidden-xs">
+							<div class="form-group" style="margin-bottom: 80px;">
+								<label for="exampleInputEmail1" class="big-form">姓名(已加密,请放心填写)</label>
+								<input type="text" placeholder="请输入" class="form-control inputDate" id="name" />
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1" class="big-form">电话(已加密,请放心填写)</label>
+								<input type="text" placeholder="请输入" class="form-control inputDate" id="phone" />
+							</div>
+							<div class="form-group">
+								<input type="checkbox" id="check1" style="border:1px solid #FFFFFF;width: 40px;height: 40px;background-color: #FFFFFF;">
+								<span style="font-size: 40px;color:#FFFFFF">自动输入历史手机号《个人授权信息书》</span>
+							</div>
+							<button type="submit" class="btn btn-default submit" style="margin-bottom: 50px;">立即领取加盟资料</button>
+						</form>
+						<!--图片2-->
+						<img src="../../static/img/ct_02.png" style="width: 100%;height: 100%;margin-top: -51px;" />
+
+						<!--电脑表单2-->
+						<div class="small-formDiv hidden-sm hidden-xs">
+							<form role="form" class="smallForm">
+								<div class="form-group">
+									<label for="exampleInputEmail1" class="small-label">姓名(已加密,请放心填写)</label>
+									<input type="text" placeholder="请输入" class="form-control smallInput" id="name" />
+								</div>
+								<div class="form-group">
+									<label for="exampleInputEmail1" class="small-label">电话(已加密,请放心填写)</label>
+									<input type="text" placeholder="请输入" class="form-control smallInput" id="phone" />
+								</div>
+								<button type="submit" class="btn btn-default " style="height: 70px;background: #490D0D;color: #FFFFFF;border:1px solid #490D0D;width: 100%;">立即领取加盟资料</button>
+
+							</form>
+
+						</div>
+						<!--手机表单2-->
+						<div class="small-FormDivs hidden-lg hidden-md" style="margin-top: -2px;">
+							<form role="form" class="smallForms">
+								<div class="form-group">
+									<label for="exampleInputEmail1" class="small-labels">姓名(已加密,请放心填写)</label>
+									<input type="text" placeholder="请输入" class="form-control smallInputs" id="name" />
+								</div>
+								<div class="form-group">
+									<label for="exampleInputEmail1" class="small-labels">电话(已加密,请放心填写)</label>
+									<input type="text" placeholder="请输入" class="form-control smallInputs" id="phone" />
+								</div>
+								<button type="submit" class="btn btn-default " style="height: 40px;background: #490D0D;color: #FFFFFF;border:1px solid #490D0D;width: 100%;">立即领取加盟资料</button>
+
+							</form>
+						</div>
+
+						<!--电脑消息框-->
+						<!--<div class="work hidden-sm hidden-xs">-->
+							<!--<iframe style="width: 600px;height: 400px" src="https://www5c1.53kf.com/webCompany.php?kf_sign=Dg3ODMTU3Mg5MTEwODg0NDAzMzg0MDA0NzIxNzUxMTg%253D&arg=10175118&style=3" width="800px" height="600px"></iframe>-->
+
+							<!--<i id="close" style="position: absolute;color: #FFFFFF;right: 15px;top:0;font-size: 38px;font-weight: 0"><img src="../../static/img/gb.png" alt="" width="20" height="20" /></i>-->
+						<!--</div>-->
+						<!--手机消息框-->
+						<!-- <div class="works hidden-lg hidden-md">
+							<iframe src="https://www5c1.53kf.com/webCompany.php?kf_sign=Dg3ODMTU3Mg5MTEwODg0NDAzMzg0MDA0NzIxNzUxMTg%253D&arg=10175118&style=3" width="100%" height="400px"></iframe>
+							<i id="closes" style="position: absolute;color: #FFFFFF;right: 15px;top:-5px;font-size: 38px;font-weight: 0"><img src="img/gb.png" alt="" width="20" height="20" /></i>
+
+						</div> -->
+					</div>
+				</div>
+			</div>
+
+
+			<!--电脑消息框-->
+			<span id="message" class=" hidden-sm hidden-xs" style="position: fixed;bottom: 0;right: 15%;top: 50%;width:120px;height: 40px;line-height:40px;font-size: 20px; background-color: #181c1b;color: #F6C200;border-radius: 3px;">《在线咨询》</span>
+			<div class="work hidden-sm hidden-xs">
+				<iframe style="width: 700px;height: 500px" src="https://www5c1.53kf.com/webCompany.php?kf_sign=Dg3ODMTU3Mg5MTEwODg0NDAzMzg0MDA0NzIxNzUxMTg%253D&arg=10175118&style=3" width="800px" height="600px"></iframe>
+				<i id="close" style="position: absolute;color: #FFFFFF;right: 15px;top:0;font-size: 38px;font-weight: 0"><img src="../../static/img/gb.png" alt="" width="20" height="20" /></i>
+			</div>
+			<!--手机消息框-->
+			<div class="works hidden-lg hidden-md">
+				<a href="https://www5c1.53kf.com/webCompany.php?kf_sign=Dg3ODMTU3Mg5MTEwODg0NDAzMzg0MDA0NzIxNzUxMTg%253D&arg=10175118&style=3">
+				<span id="message" class="hidden-lg hidden-md" style="position: fixed;bottom: 0;right: 0;top: 50%;width:120px;height: 40px;line-height:40px;font-size: 20px; background-color: #181c1b;color: #F6C200;border-radius: 3px;">《在线咨询》</span>
+			</a>
+		</div>
+		<ul class="nav nav-pills navbar-fixed-bottom login-box" id="login-box" style="display:block;text-align:center;margin: 0 auto;right: 10%">
+			<li class="nav-li" id="nava" onclick="focu()" style="filter:alpha(Opacity=80);-moz-opacity:0.5;margin-bottom: 1%; float: right;  background-color: #181c1b; border-radius:50px;">
+				<button href="#" class="phone phoneButton" style="border-radius:50px;color: #F6C200;font-size: 14px;font-weight: 600;text-align: center;">获取加盟资料</button>
+			</li>
+		</ul>
+
+			<!--手机底部导航栏-->
+
+			<!--<ul class="nav nav-pills navbar-fixed-bottom hidden-lg hidden-md" style="display:block;text-align:center;margin: 0 auto; ">-->
+				<!--<li class="nav-lis" style="float: left;">-->
+					<!--<i class=" glyphicon glyphicon-list-alt lis-ico"></i>-->
+					<!--<button class="phone " onclick="focu()" style="color: #f6c200;font-size: 20px;text-align: center;background-color: transparent;border:transparent;padding: 10px 0 13px 0;">获取资料</button>-->
+				<!--</li>-->
+			<!--</ul>-->
+			<!--&lt;!&ndash;电脑底部导航栏&ndash;&gt;-->
+			<!--<div style="width: 70%;height: 250px;position: fixed;bottom: -83px;">-->
+				<!--<ul class="nav nav-pills  hidden-sm hidden-xs" style="display:block;text-align:center;margin: 0 auto;">-->
+					<!--<li class="nav-li">-->
+						<!--<i class=" glyphicon glyphicon-list-alt li-ico"></i>-->
+						<!--<button class="phone " onclick="focu()" style="color: #f6c200;font-size: 52px;text-align: center;background-color: transparent;border:transparent;padding: 10px 0 13px 0;">获取资料</button>-->
+					<!--</li>-->
+				<!--</ul>-->
+			<!--</div>-->
+			<!--&lt;!&ndash;手机底部导航栏&ndash;&gt;-->
+			<!--<ul class="nav nav-pills navbar-fixed-bottom hidden-lg hidden-md" style="display:block;text-align:center;margin: 0 auto; ">-->
+				<!--<li class="nav-lis">-->
+					<!--<i class="	glyphicon glyphicon-earphone lis-ico"></i>-->
+					<!--<a href="https://www5c1.53kf.com/webCompany.php?kf_sign=Dg3ODMTU3Mg5MTEwODg0NDAzMzg0MDA0NzIxNzUxMTg%253D&arg=10175118&style=3" target="_blank" class="phone  " style="width:100%;color: #f6c200;font-size: 20px;text-align: center;">在线咨询</a>-->
+				<!--</li>-->
+				<!--<li class="nav-lis" onclick="focu()" style="float: left;">-->
+					<!--<i class="	glyphicon glyphicon-list-alt lis-ico"></i>-->
+					<!--<button class="phone "  style="color: #f6c200;font-size: 20px;text-align: center;background-color: transparent;border:transparent;padding: 10px 0 13px 0;">获取资料</button>-->
+				<!--</li>-->
+			<!--</ul>-->
+			<!--&lt;!&ndash;电脑底部导航栏&ndash;&gt;-->
+			<!--<div style="width: 100%;height: 200px;position: fixed;bottom: -83px;">-->
+				<!--<ul class="nav nav-pills  hidden-sm hidden-xs" style="display:block;text-align:center;margin: 0 auto;">-->
+					<!--<li class="nav-li">-->
+						<!--<i class="	glyphicon glyphicon-earphone li-ico" style="font-size: 42px"></i>-->
+						<!--<a href="https://www5c1.53kf.com/webCompany.php?kf_sign=Dg3ODMTU3Mg5MTEwODg0NDAzMzg0MDA0NzIxNzUxMTg%253D&arg=10175118&style=3" target="_blank" class="phone " style="color: #f6c200;font-size: 30px;text-align: center;">在线咨询</a>-->
+					<!--</li>-->
+					<!--<li class="nav-li"  onclick="focu()">-->
+						<!--<i class="	glyphicon glyphicon-list-alt li-ico" style="font-size: 42px"></i>-->
+						<!--<button class="phone " style="color: #f6c200;font-size: 30px;text-align: center;background-color: transparent;border:transparent;padding: 10px 0 12px 0;">获取资料</button>-->
+					<!--</li>-->
+				<!--</ul>-->
+			<!--</div>-->
+		</div>
+		<script src="../../static/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//定位
+			function focu() {
+				//document.getElementById("name").focus()
+				document.querySelector("#Table").scrollIntoView();
+			}
+
+			function IsPC() {
+				var userAgentInfo = navigator.userAgent;
+				var Agents = ["Android", "iPhone",
+					"SymbianOS", "Windows Phone",
+					"iPad", "iPod"];
+				var flag = true;
+				for (var v = 0; v < Agents.length; v++) {
+					if (userAgentInfo.indexOf(Agents[v]) > 0) {
+						flag = false;
+						break;
+					}
+				}
+				return flag;
+			}
+
+			$(document).ready(function(){
+						var ispc = IsPC();
+						console.log(ispc)
+						if(ispc){
+							document.getElementById('login-box').style.left = '0%';
+							document.getElementById('login-box').style.right = '10%';
+						}else {
+							document.getElementById('login-box').style.left = '-58%';
+							document.getElementById('login-box').style.right = '0';
+
+						}
+					}
+			)
+
+			// //消息框弹出
+			// $(document).ready(function() {
+			// 	$(".work").stop().slideDown(1000);
+			// 	$(".works").stop().slideDown(1000);
+			// 	//电脑消息框关闭事件
+			// 	$("#close").click(function() {
+			// 		$(".work").hide();
+			//
+			// 	});
+			// 	//手机消息框关闭事件
+			//
+			// 	$("#closes").click(function() {
+			// 		$(".works").hide();
+			//
+			// 	})
+			//
+			// })
+			//消息框弹出
+			$(document).ready(function() {
+				$(".works").stop().slideDown(1000);
+				//电脑消息框关闭事件
+				$("#close").click(function() {
+					$(".work").hide();
+					$("#message").show();
+
+				});
+				//手机消息框关闭事件
+
+				$("#closes").click(function() {
+					$(".works").hide();
+
+				});
+				$("#message").click(function() {
+					$(".work").show();
+					$("#message").hide();
+				});
+
+			})
+		</script>
+	</body>
+
+</html>

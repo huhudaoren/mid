@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>建设02</title>
+
+
+    <script>
+        window._agl = window._agl || [];
+        (function () {
+            _agl.push(
+                ['production', '_f7L2XwGXjyszb4d1e2oxPybgD']
+            );
+            (function () {
+                var agl = document.createElement('script');
+                agl.type ='text/javascript';
+                agl.async = true;
+                agl.src = 'https://fxgate.baidu.com/angelia/fcagl.js?production=_f7L2XwGXjyszb4d1e2oxPybgD';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(agl, s);
+            })();
+        })();
+    </script>
+</head>
+<style>
+    body{
+        text-align:center;
+    }
+    .inputText{
+        border-left-width:0px;
+        border-top-width:0px;
+        border-right-width:0px;
+        width:60%;
+        height:45px;
+    }
+    input::-webkit-input-placeholder{
+        color: #000;
+    }
+    .footer{
+        position:fixed; /* 使按钮固定于可视窗口的底部  // 设置固定高度*/
+        bottom :0;
+        left :0;
+        right :0;
+        height:60px ;
+        background :orange;
+        width: 35.5%;
+        margin: auto;
+        border-radius:5px;
+    }
+
+</style>
+<body>
+<div id="t" style="padding-bottom: 60px;box-sizing: border-box;min-height: 100%;">
+    <div>
+        <!-- 引入头图片 -->
+        <img src="http://47.56.105.7:8914/static/jianshe/img/pc02top.jpg" width="75.5%"/>
+    </div>
+    <div>
+        <!-- 引入头图片 -->
+        <img src="http://47.56.105.7:8914/static/jianshe/img/gif.gif" width="60.5%"/>
+    </div>
+    <div style="margin-left: auto;">
+        <img src="http://47.56.105.7:8914/static/jianshe/img/pc02buttom.jpg"  width="75.5%"/>
+        <!--  引入图片 -->
+    </div>
+
+
+    <div style="height: 300px;width: 75.5%;margin: auto;text-align:center;background-color:#C0B4B7">
+            <div style="width:75%;margin: auto;height: 80%" id="Table">
+
+                <div style="width: 100%;height: 100%">
+                    <div style="width: 50%;height:100%;float: left">
+                        <div style="padding-top: 60px;" >
+                            <span>姓名<span style="color: #f20000">*&nbsp;&nbsp;&nbsp;</span></span>
+                            <input type="text" name="name" id="name" class="inputText" placeholder="姓名" />
+                            <br><br>
+                            <span>手机号<span style="color: #f20000">*</span></span>
+                            <input type="text" name="phone" id="phone" class="inputText" placeholder="手机号" />
+                        </div>
+                    </div>
+                    <div style="width: 50%;height:100%;float: left">
+                        <div style="padding-top: 20px;" >
+                            <p>您所在城市（单选）<span style="color: #f20000">*&nbsp;&nbsp;&nbsp;</span></p>
+                                <label><input name="area" type="radio" value="广州" />广州 </label>
+                                <label><input name="area" type="radio" value="深圳" />深圳 </label>
+                                <label><input name="area" type="radio" value="东莞" />东莞 </label>
+                                <label><input name="area" type="radio" value="佛山" />佛山 </label>
+                                <label><input name="area" type="radio" value="中山" />中山 </label>
+                                <label><input name="area" type="radio" value="珠海" />珠海 </label>
+								<label><input name="area" type="radio" value="贵州" />贵州 </label>
+                            <br><br>
+                            <p>别墅装修设计面积（单选）<span style="color: #f20000">*</span></p>
+                                <label><input name="supm" type="radio" value="150-300平方米" />150-300M<sup>2</sup> </label>
+                                <label><input name="supm" type="radio" value="300-500平方米" />300-500M<sup>2</sup></label>
+                                <label><input name="supm" type="radio" value="500-800平方米" />500-800M<sup>2</sup></label>
+                                <label><input name="supm" type="radio" value="800平方米以上" />800M<sup>2</sup>以上</label>
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="isPc" id="isPc" value="1" />
+                    <input type="submit" style="margin-top: 20px; background:#FFFFFF; width:30%;height:40px;font-size:15px;" value="点击获取别墅装修设计报价"  onclick="submitFrom()"/>
+                </div>
+            </div>
+        <!-- 引入提交 -->
+    </div>
+
+
+    <div class="footer" onclick="focu()">
+        <p style="font-size:25px;color:#f0f0f0;height:50px;line-height: 20px;">点
+            &nbsp;击
+            &nbsp;获
+            &nbsp;取
+            &nbsp;别
+            &nbsp;墅
+            &nbsp;装
+            &nbsp;修
+            &nbsp;设
+            &nbsp;计
+            &nbsp;报
+            &nbsp;价</p>
+    </div>
+</div>
+<iframe name="form" id="form" style="display:none"></iframe>
+</body>
+
+
+<script src="http://47.56.105.7/static/assets/js/jquery.min.js"></script>
+<script>
+
+    function focu() {
+        //document.getElementById("name").focus()
+        document.querySelector("#Table").scrollIntoView();
+    }
+
+    function submitFrom() {
+        var name = $("#name").val();
+        var phone = $("#phone").val();
+        var supm = $("input[name='supm']:checked").val();
+        var area = $("input[name='area']:checked").val();
+        if(name == null || name.length ==0){
+            alert("请输入姓名");return;
+        }
+        if(phone == null || phone.length ==0){
+            alert("请输入手机号");return;
+        }
+        if(supm == null || supm.length ==0){
+            alert("请选择平方米");  return;
+        }
+        if(area == null || area.length ==0){
+            alert("请选择地址"); return;
+        }
+
+        // Ajax提交数据
+        $.ajax({
+            url: "http://47.56.105.7/hr/jianshe02/submit",
+            //url: "http://localhost/hr/jianshe02/submit",
+            type: "post",    // 提交方式
+            data: {"name": name, "phone": phone,"isPc":1,"supm":supm,"area":area,"type":2},
+            dataType: "json",
+            success: function (data) {
+                if(!(data.indexOf("已经提交过") == -1)){
+
+                    window._agl && window._agl.push(['track', ['success', {t: 3}]])
+                }
+                alert(data);
+            },error(data){
+                if(!(data.responseText.indexOf("已经提交过") == -1)){
+                    window._agl && window._agl.push(['track', ['success', {t: 3}]])
+                }
+
+                alert(data.responseText);
+            }
+        });
+    }
+</script>
+</html>

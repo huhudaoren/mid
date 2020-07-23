@@ -1,0 +1,16 @@
+/* CSS Document */
+*html,*htmlbody{background-image:url(about:blank);background-attachment:fixed;}
+.flbar140424{width:100%;height:50px;position:fixed;bottom:0px;_position:absolute;_bottom:auto;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));    z-index: 999; }
+.flbar-bg140424{background:#000000;height:50px;left:0;position:absolute;top:0;width:100%;zoom:1;
+filter:alpha(opacity=90);-moz-opacity:0.9;-khtml-opacity: 0.9; opacity: 0.9; }
+.position_box{position:relative;}
+.ftbar-w{width: 1002px;margin:0 auto;height: 50px;position: relative;overflow: hidden;zoom:1;z-index: 999;}
+.bar-txt,.bar-mark,.bar-submit,.bar-submit li{float: left;overflow: hidden;}
+.bar-txt{width: 642px;text-align: center;line-height: 50px;color: #FFF;font-size: 22px;font-weight: bold; margin:0; padding:0;font-family: 'Microsoft Yahei',"微软雅黑";}
+.bar-mark{width:128px;color: #FFF;font-size: 12px;line-height: 18px; margin:0;padding:7px 0px 7px 0;}
+.bar-mark em{ float:right; width:40px; height:20px; margin-top:8px;background:url(/html/tiao/bar-iocn1.png) no-repeat;_background:none;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='scale', src="./images/bar-iocn1.png");}
+.bar-submit{width:112px;padding:7px 0px; padding-left:10px;height: 36px; margin:0;}
+.bar-submit li{background:url(/html/tiao/buttonbg1.png) no-repeat;width: 112px;height: 35px;line-height: 35px;text-align: center;margin:0px;display: inline;color: #FFF;font-size: 16px;font-weight: bold;text-decoration: none;}
+.bar-submit li a{display: block;outline: none;width: 112px;height: 35px;color: #FFF;font-size: 16px;font-weight: bold;text-decoration: none;}
+.bar-submit .fore1{background-position: 0px 0px;}
+.bar-submit .fore2{background-position: 0px -35px;}#cnzz_stat_icon_1255603889{display:none;}

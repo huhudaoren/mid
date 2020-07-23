@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <title>七公江湖</title>
+  <style>body,h1,h2,h4,h5,dd,ul,p,form,textarea,th,td,select{ margin: 0;padding: 0;} em { font-style: normal;} li {list-style: none;} a {text-decoration: none;color:#333333;} table img {border: none;vertical-align: top; display:block; border:0px} table {border-collapse: collapse;} input,textarea {outline: none;} textarea {resize: none;overflow: auto;} body {font-size: 12px;font-family: "微软雅黑";} * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }</style></head>
+
+<body>
+<div  style="line-height: 0; font-size: 0px; position: fixed;  bottom: 0px; width: 100%; height: 0px; z-index: 1000000; cursor: move; overflow: visible;">
+  <div class="mini-btn mini-btn1" id="mini-btn" style="width: 100%; white-space: nowrap; cursor: pointer; display: block; position: absolute; right: 0px; bottom: 0px; z-index: -1;background-color: #FF9420; height: 42px; border-radius: 2px; overflow: hidden; background: rgb(31, 31, 31) none repeat scroll 0% 0%; box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 6px, rgba(0, 0, 0, 0.16) 0px 2px 32px !important;">
+
+    <button style="width: 51%; border:none;margin:0;padding: 0;outline: none;background-color:#FF9420;" onclick="focu()" >
+      <div class="mini-btn-info" style="position: relative;width: 14%;height: 42px;display:inline-block;">
+        <span style="width:100%;height:100%;position:absolute;left:0;top:0;z-index:1;background: center center no-repeat;background-color: #FF9420;background-image: url(https://www5c1.53kf.com/style/chat/new2017/image/png/img-info24.png);background-image: url(https://www5c1.53kf.com/style/chat/new2017/image/svg/img-info24.svg), none;"></span>
+        <span style="width:100%;height:100%;position:absolute;left:0;top:0;background:#000;opacity:0.2;filter:alpha(opacity=20);background-color: #FF9420;"></span>
+        <span id="info-num" style="display:none;position: absolute;top: 5px;right: 5px;z-index:10;height: 14px;min-width: 14px;line-height: 14px;border-radius: 7px;background: red;font-size: 12px;background-color: #FF9420;color: #FFFFFF;letter-spacing: 0.47px;text-align: center;">0</span></div>
+      <div style="width: 70%;font-weight:normal;display:inline-block;vertical-align:top;line-height: 42px;padding: 0 8px;font-size: 16px;color: #FFFFFF;letter-spacing: 0.83px;word-break: break-all;text-align: center;background-color: #FF9420;" onclick=""><span>立即留言</span></div>
+    </button>
+
+    <div class="mini-btn-window" style="background-color: #FF363A;display:inline-block;width: 12%;height: 42px;background: center center no-repeat;background-image: url(../../static/qgjhiphone_files/ipone1.svg);background-color: #FF363A;"><a href="https://www5c1.53kf.com/webCompany.php?kf_sign=Dg3ODMTU3Mg5MTEwODg0NDAzMzg0MDA0NzIxNzUxMTg%253D&amp;arg=10175118&amp;style=3" style="color:#FFFFFF"></a></div>
+    <div  style="width: 37%;font-weight:normal;display:inline-block;vertical-align:top;background-color: #FF363A;line-height: 42px;padding: 0 8px;font-size: 16px;color: #FFFFFF;letter-spacing: 0.83px;word-break: break-all;text-align: center;"><a href="https://www5c1.53kf.com/webCompany.php?kf_sign=Dg3ODMTU3Mg5MTEwODg0NDAzMzg0MDA0NzIxNzUxMTg%253D&amp;arg=10175118&amp;style=3" style="color:#FFFFFF">免费咨询</a></div>
+
+
+  </div>
+
+</div>
+
+<div id="kfivteffect" style="display: none; position: absolute; width: 0px; height: 0px; overflow: hidden; border: 1px solid rgb(27, 136, 208); background: rgb(214, 238, 253) none repeat scroll 0% 0%; z-index: 10087;"></div>
+
+
+<!-- 头部 -->
+<link href="../../static/qgjhiphone_files/wap_fd.css" rel="stylesheet" type="text/css">
+<link href="../../static/qgjhiphone_files/html5.css" rel="stylesheet" type="text/css">
+<script src="../../static/qgjhiphone_files/jquery.js" language="javascript" type="text/javascript"></script>
+<style>@media screen and (max-device-width: 640px){ body {width: 100%;}} @media screen and (min-width: 640px){ body {width: 640px;margin: 0 auto;}} ul,li{ margin:0; padding:0; list-style:none} /*img { width:100%; vertical-align:bottom}*/ header { background: #bf0000 none repeat scroll 0 0; border-bottom: 1px solid #850400; color: #fff; display: block; font: bold 12px/28px "微软雅黑"; position: relative; text-align: center; }
+
+/*.Lelem{*/
+  /*display: none;*/
+/*}*/
+/*#Lelem{*/
+  /*display: none;*/
+/*}*/
+</style>
+
+<!--内容部分-->
+<table id="__01" width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+  <tbody>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_01.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_02.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_03.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_04.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_05.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_06.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_07.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_08.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_09.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_10.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_11.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_12.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_13.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_14.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_15.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_16.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_17.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_18.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_19.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_20.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_21.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_22.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_23.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_24.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_25.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_26.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_27.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_28.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_29.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_30.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_31.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_32.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_33.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_34.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_35.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_36.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_37.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_38.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_39.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_40.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_41.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_42.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_43.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_44.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_45.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_46.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_47.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_48.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_49.jfif" alt="" width="100%"></td>
+  </tr>
+  <tr>
+    <td>
+      <img src="../../static/qgjhiphone_files/index_50.jfif" alt="" width="100%"></td>
+  </tr>
+  </tbody>
+</table>
+<!--内容部分结束-->
+<!--留言板代码-->
+<div id="gbook"></div>
+
+<!-- -->
+<section>
+  <a id="gbook"></a>
+  <div class="msg_box" id="msg01" >
+    <!--<span>本站隶属美国上市企业，您的个人信息不会被泄露！</span>-->
+    <p class="zs_box Table"  id="Table">温馨提醒：该项目已获诚信投资认证，请放心合作</p>
+    <form id="myform" action="/bjHqgSubmit" method="post">
+      <b class="hs_wz" id="name_flag"></b>
+      <p class="inputbox">
+        <b class="hs">*</b>
+        <label>姓名：</label>
+        <input name="userName" id="text_trueName" type="text" placeholder="如 张先生" class="input" onblur="checkNickname(this)"></p>
+      <b class="hs_wz" id="phone_flag"></b>
+      <p class="inputbox">
+        <b class="hs">*</b>
+        <label>手机：</label>
+        <input name="phone" id="text_telephone" type="text" placeholder="如 13696666888" class="input" onblur="checkPhone(this)"></p>
+      <b class="hs_wz"></b>
+      <p class="inputbox">
+        <b class="hs">*</b>
+        <label>回访：</label>
+        <input type="radio" value="0" checked="checked" name="timeQ">随时&nbsp;&nbsp;
+        <input type="radio" value="1" name="timeQ">上班时间&nbsp;&nbsp;
+        <input type="radio" value="2" name="timeQ">下班时间</p>
+      <input type="hidden" name="isPc" id="isPc" value="0">
+      <a id="submitLeaveword" onclick="document.getElementById('myform').submit();return false;" class="btn_tj" style="color: #000000;">提交留言</a>
+    </form>
+  </div>
+</section>
+<!--留言板代码END -->
+<!--版权-->
+<style>#cnzz_stat_icon_1255603889{ display:none; }</style>
+<div style="margin:0 auto;width:180px;color:#ccc;">投资有风险，选择需谨慎</div>
+<style>.footercopy { color: #666666; line-height: 23px; text-align: center; font-weight: bold; margin-top:7px; }</style>
+<!--footer开始-->
+<div class="footercopy" style="color:#ccc"></div>
+ <div class="footer_dz">Copyright © 北京耀顺同创科技有限公司</div>
+<!--footer结束-->
+<div style="height:60px;">&nbsp;</div>
+
+<!-- NewCount Start --></script>
+<!-- NewCount End -->
+<script type="text/javascript">
+        //定位
+        function focu() {
+          //document.getElementById("name").focus()
+          document.querySelector("#Table").scrollIntoView();
+        }
+</script>
+<!-- <script id="hz6d_flp_jquery" src="../../static/qgjhiphone_files/jquery-1.js" charset="utf-8" type="text/javascript"></script> -->
+
+<!--<a href="https://www5c1.53kf.com/webCompany.php?kf_sign=Dg3ODMTU3Mg5MTEwODg0NDAzMzg0MDA0NzIxNzUxMTg%253D&amp;arg=10175118&amp;style=3"><div  style="line-height: 1.2; font-size: 13px; position: fixed;  bottom: 50%; width: 24px; height: 95px; z-index: 1000000; cursor: move; overflow: visible; right: 0;">-->
+  <!--<div class="mini-btn mini-btn1" id="mini-btn" style="height: 100%;width: 100%; white-space: nowrap; cursor: pointer; display: block; position: absolute; right: 0px; bottom: 50%; z-index: -1;background-color: #FF9420;border-radius: 2px; overflow: hidden;  box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 6px, rgba(0, 0, 0, 0.16) 0px 2px 32px !important;">-->
+    <!--<span style="width:100%;height:100%;position:absolute;z-index:1;background: no-repeat;background-image: url(https://www5c1.53kf.com/style/chat/new2017/image/png/img-info24.png);background-image: url(https://www5c1.53kf.com/style/chat/new2017/image/svg/img-info24.svg), none;"></span>-->
+    <!--<br>-->
+    <!--<span style="position:absolute;z-index:1;left: 25%;top: 28%;">获<br>取<br>资<br>料</span>-->
+
+  <!--</div>-->
+<!--</div></a>-->
+<input type="hidden" th:value="${msg}" id="msg">
+</body>
+<script>(function() {var _53code = document.createElement("script");_53code.src = "https://tb.53kf.com/code/code/f9f013f0e857675215f761b2df371f624/3";
+  var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(_53code, s);})();</script>
+<script type="text/javascript" src="../../static/assets/js/jquery.min.js"></script>
+<script>
+
+  $(document).ready(function() {
+    var data1=document.getElementById("msg").value;
+    if(data1 != '0'){
+      alert(data1);
+    }
+  });
+
+</script>
+</html>

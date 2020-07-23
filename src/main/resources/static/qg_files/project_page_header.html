@@ -1,0 +1,58 @@
+<!-- 	var system ={
+		win : false,
+		mac : false,
+		xll : false
+		};
+		//检测平台
+		var p = navigator.platform;
+		system.win = p.indexOf("Win") == 0;
+		system.mac = p.indexOf("Mac") == 0;
+		system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+		//跳转语句，如果是手机访问就自动跳转到手机端wap页面
+		if(system.win||system.mac||system.xll){
+
+		}else{
+			var href = window.location.href;
+			if(href.indexOf("/ws/") != -1 ){
+				str = href.replace(/\/ws\//g, "/wp/"); 
+				arr=str.split("/");
+				var n_href = '';
+				for(var i=0;i<arr.length;i++){
+					if(i==(arr.length-1)){
+						n_href += arr[i];
+					}else{
+						if(i==4){
+							n_href += arr[i]+'wap/';
+						}else{
+							n_href += arr[i]+'/';
+						}
+					}
+				}
+				window.location.href=n_href;//手机端网址
+			}
+		}
+
+document.writeln("<div class=\"logo-nav\">");
+document.writeln("<a href=\"\/\" class=\"logo-28 fl\"><img id=\"project_page_header_logo\" alt=\"\" src=\"\" height=\"44px\"><\/a>");
+
+$("#project_page_header_logo").attr('src',"/html/images/28pc-logo.jpg"); 
+
+
+ <!-- // document.writeln("<div id=\"hadertext_zoom_20151120\"><\/div>"); -->
+
+document.writeln("<div class=\"fl dh_pan\">");
+document.writeln("<a class=\"fl logo-xm\" target=\"_blank\" href=\"\/html\/header\/jjheader_list\/\">餐饮小吃<\/a>");
+document.writeln("<a class=\"fl logo-xm\" target=\"_blank\" href=\"\/html\/header\/jjheader_list\/\">服装鞋帽<\/a>");
+document.writeln("<a class=\"fl logo-xm\" target=\"_blank\" href=\"\/html\/header\/jjheader_list\/\">美容保健<\/a>");
+document.writeln("<a class=\"fl logo-xm\" target=\"_blank\" href=\"\/html\/header\/jjheader_list\/\">特色创新<\/a>");
+document.writeln("<a class=\"fl logo-xm\" target=\"_blank\" href=\"\?rz=1\">企业资质<\/a>");
+
+document.writeln("<a href=\"http://www.mj28140.cn\" target=\"_blank\" class=\"fl logo-xm ico fhshouye\">返回首页<\/a>");
+
+document.writeln("<\/div>"); 
+document.writeln("<div class=\"space8\"><\/div>");
+//document.writeln("<div id=\"hadertextlist_zoom_20151120\"><\/div>");
+//document.getElementById("hadertextlist_zoom_20151120").innerHTML=hadertextlist_zoom_20151120;
+document.writeln("<\/div>");
+
+ -->

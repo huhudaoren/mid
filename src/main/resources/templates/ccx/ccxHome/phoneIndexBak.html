@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="http://47.56.105.7/static/lr/css/bootstrap.min.css" />
+    <script  href="http://47.56.105.7:8914/static/assets/js/jquery.min.js"type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .xx {
+            color: red;
+        }
+
+        .email {
+            /* border: none;
+            background: none;
+            border-radius: 0 0 0 0;
+            box-shadow: none;
+            border-bottom: 1px solid rgb(0, 0, 0, 0.54);
+            height: 30px; */
+            /*border: none;*/
+            background: none;
+            border-radius: 0 0 0 0;
+            box-shadow: none;
+            /*border-bottom: 1px solid rgb(0, 0, 0, 0.54);*/
+            height: 30px;
+            BORDER-TOP-STYLE: none;
+            BORDER-RIGHT-STYLE: none;
+            BORDER-LEFT-STYLE: none;
+            BORDER-BOTTOM-STYLE: solid
+        }
+
+
+
+        label {
+            color: #828282
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        label {
+            font-size: 10px;
+            color: #777978;
+        }
+
+        span {
+            color: red;
+        }
+
+        .email {
+            border: none;
+            background: none;
+            border-radius: 0 0 0 0;
+            box-shadow: none;
+            border-bottom: 1px solid rgb(0, 0, 0, 0.54);
+            height: 30px;
+        }
+
+
+        label {
+            /*font-size: 26px;*/
+            color: #000;
+            display: inline-block;
+        }
+        .inputText{
+            border-left-width:0px;
+            border-top-width:0px;
+            border-right-width:0px;
+            width:90%; height:60px;
+        }
+        input::-webkit-input-placeholder{
+            color: #000;
+        }
+
+    </style>
+
+</head>
+
+<body onload="myfun()">
+<div class="login-box" id="app" style="padding-bottom: 80px;margin-top: -40px;">
+    <div class="login-box-body">
+        <div style="height: 40px;"></div>
+
+        <img src="http://47.56.105.7:8914/static/phoneFloat.png" alt="" width="100%"/>
+
+        <img src="http://47.56.105.7:8914/static/phoneIndexTop.jpg" alt="" width="100%"/>
+        <div style="height: 250px;width: 100%;margin: auto;text-align:center;" id="Table1">
+            <h4 style="color: #fff">获取更多加盟资料</h4>
+
+            <div style="padding-top: 20px;" >
+                <input type="text" name="name" id="name1" class="inputText" placeholder="姓名" />
+                <br />
+                <input type="text" name="phone" id="phone1" class="inputText" placeholder="手机号" />
+                <br />
+                <input type="hidden" name="isPc" id="isPc1" value="0" />
+                <input type="submit" style="margin-top: 20px; background:#FFFFFF; width:160px;height:40px;font-size:15px;" onclick="submitFrom()" value="获取更多加盟资料"/>
+            </div>
+
+            <!-- 引入提交 -->
+        </div>
+        <img src="http://47.56.105.7:8914/static/phoneIndexZ.jpg" alt="" width="100%"/>
+
+        <div style="height: 250px;width: 100%;margin: auto;text-align:center;" id="Table" >
+            <h4 style="color: #fff">获取更多加盟资料</h4>
+
+            <div style="padding-top: 20px;" >
+                <input type="text" name="name" id="name" class="inputText" placeholder="姓名" />
+                <br />
+                <input type="text" name="phone" id="phone" class="inputText" placeholder="手机号" />
+                <br />
+                <input type="hidden" name="isPc" id="isPc" value="0" />
+                <input type="submit" style="margin-top: 20px; background:#FFFFFF; width:160px;height:40px;font-size:15px;" onclick="submitFrom()" value="获取更多加盟资料"/>
+            </div>
+
+            <!-- 引入提交 -->
+        </div>
+        <img src="http://47.56.105.7:8914/static/phoneF.jpg"  alt="" width="100%"/>
+    </div>
+
+
+</div>
+<div style="margin-left: 0%;width: 7%; border-radius:5px; position: fixed;background:#036eb8;  bottom: 63%; height:12%; font-size: 0;  z-index: 100; text-align:center;" onclick="focu()">
+    <p style="font-size:15px;color:#f0f0f0;height:50px">获取更多</p>
+</div>
+
+
+<input type="hidden" th:value="${msg}" id="msg">
+
+<script>(function() {var _53code = document.createElement("script");_53code.src = "https://tb.53kf.com/code/code/dc71fef719c6f06b1774ac50148a7945/1";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(_53code, s);})();</script>
+<script src="http://47.56.105.7/static/assets/js/jquery.min.js"></script>
+<script>
+
+
+    function myfun() {
+        var data1=document.getElementById("msg").value;
+        console.log(data1);
+        if(data1 != null && data1 != '' && data1 != '0'){
+            alert(data1);
+        }
+    }
+
+
+    function submitFrom() {
+
+        var name = $("#name").val();    // 获取id为username的<input>框数据
+        var phone = $("#phone").val();    // 获取id为password的<input>框数据
+
+        // Ajax提交数据
+        $.ajax({
+            url: "http://47.56.105.7/hr/jiaju/submit",    // 提交到controller的url路径
+            type: "post",    // 提交方式
+            data: {"name": name, "phone": phone,"isPc":0},  // data为String类型，必须为 Key/Value 格式。
+            dataType: "json",    // 服务器端返回的数据类型
+            success: function (data) {    // 请求成功后的回调函数，其中的参数data为controller返回的map,也就是说,@ResponseBody将返回的map转化为JSON格式的数据，然后通过data这个参数取JSON数据中的值
+                alert(data);
+            },error(data){
+                alert(data.responseText);
+            }
+        });
+    }
+
+    function focu() {
+        //document.getElementById("name").focus()
+        document.querySelector("#Table").scrollIntoView();
+    }
+</script>
+
+
+<script href="http://47.56.105.7/static/lr/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script href="http://47.56.105.7/static/lr/js/popper.min.js"></script>
+<script href="http://47.56.105.7/static/lr/js/city.js"></script>
+<script href="http://47.56.105.7/static/lr/js/method.js"></script>
+</body>
+
+</html>

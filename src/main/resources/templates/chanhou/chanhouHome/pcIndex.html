@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>产后护理</title>
+
+
+    <script>
+        window._agl = window._agl || [];
+        (function () {
+            _agl.push(
+                ['production', '_f7L2XwGXjyszb4d1e2oxPybgD']
+            );
+            (function () {
+                var agl = document.createElement('script');
+                agl.type ='text/javascript';
+                agl.async = true;
+                agl.src = 'https://fxgate.baidu.com/angelia/fcagl.js?production=_f7L2XwGXjyszb4d1e2oxPybgD';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(agl, s);
+            })();
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../static/lr/css/bootstrap.min.css" />
+</head>
+<style>
+    body{
+        text-align:center;
+    }
+    .inputText{
+        border-left-width:0px;
+        border-top-width:0px;
+        border-right-width:0px;
+        width:100%;
+        height:45px;
+    }
+    input::-webkit-input-placeholder{
+        color: #000;
+    }
+    .footer{
+        position:fixed; /* 使按钮固定于可视窗口的底部  // 设置固定高度*/
+        bottom :0;
+        left :0;
+        right :0;
+        height:60px ;
+        background :orange;
+        width: 35.5%;
+        margin: auto;
+        border-radius:5px;
+    }
+
+</style>
+<body>
+<div id="t" style="padding-bottom: 60px;box-sizing: border-box;min-height: 100%;">
+    <div>
+        <!-- 引入头图片 -->
+        <img src="http://47.56.105.7:8914/static/chanhou/img/pcchanhoutop.jpg" width="75%"/>
+    </div>
+
+
+    <div style="height: 450px;width: 45.5%;margin: auto;text-align:center; background-color:#fff9ff">
+            <div style="width:75%;margin: auto;height: 80%" id="Table">
+
+                <div style="width: 100%;height: 100%">
+<!--                    <div style="width: 50%;height:100%;float: left">-->
+<!--                    </div>-->
+                        <div style="padding-top: 20px;" >
+                            <p align="left">您的姓名<span style="color: #f20000">*&nbsp;&nbsp;&nbsp;</span></p>
+                            <input type="text" name="name" id="name" class="inputText" placeholder="请输入" />
+
+                            <p align="left">您的手机号<span style="color: #f20000">*</span></p>
+                            <input type="text" name="phone" id="phone" class="inputText" placeholder="请输入" />
+                        </div>
+
+
+                        <div style="padding-top: 20px;" >
+
+                            <div class="form-group">
+                                <p align="left"> 您所在的城市<span style="color: #f20000">*</span></p>
+                                <select name="" class="form-control email" style="display: inline-block;width: 45%;" id="prov" onchange="showCity(this)">
+                                    <option value="">请选择省份</option>
+                                </select>
+                                <input type="hidden" name="province" id="provName" />
+                                <select name="" class="form-control email" style="display: inline-block;width: 45%;" id="city"  onchange="showCountry(this)">
+                                    <option value="">请选择城市</option>
+                                </select>
+                                <input type="hidden" name="city" id="cityName" />
+                            </div>
+
+
+                            <p align="left">您预计投资的金额（单选）<span style="color: #f20000">*</span></p>
+                                <label style="margin-left: 10%"><input name="money" type="radio" value="50-70万" />50-70万</label>
+                                <label style="margin-left: 10%"> <input name="money" type="radio" value="70-100万" />70-100万</label>
+                                <label style="margin-left: 10%"><input name="money" type="radio" value="100万以上" />100万以上</label>
+                        </div>
+<!--                    <div style="width: 50%;height:100%;float: left">-->
+<!--                    </div>-->
+
+
+                    <input type="submit" style="margin-top: 20px; background:#ff363b; width:50%;height:40px;font-size:15px;border-radius:15px;color: #ffffff" value="点击提交获取详细加盟资料" onclick="submitFrom()"/>
+                </div>
+            </div>
+        <!-- 引入提交 -->
+    </div>
+
+    <img src="http://47.56.105.7:8914/static/chanhou/img/pcchanhouleft.jpg" width="75%"/>
+
+
+    <div style="height: 450px;width: 45.5%;margin: auto;text-align:center; background-color:#fff9ff">
+        <div style="width:75%;margin: auto;height: 80%" id="Table1">
+
+            <div style="width: 100%;height: 100%">
+                <!--                    <div style="width: 50%;height:100%;float: left">-->
+                <!--                    </div>-->
+                <div style="padding-top: 20px;" >
+                    <p align="left">您的姓名<span style="color: #f20000">*&nbsp;&nbsp;&nbsp;</span></p>
+                    <input type="text" name="name" id="name1" class="inputText" placeholder="请输入" />
+
+                    <p align="left">您的手机号<span style="color: #f20000">*</span></p>
+                    <input type="text" name="phone" id="phone1" class="inputText" placeholder="请输入" />
+                </div>
+
+
+                <div style="padding-top: 20px;" >
+
+                    <div class="form-group">
+                        <p align="left"> 您所在的城市<span style="color: #f20000">*</span></p>
+                        <select name="" class="form-control email" style="display: inline-block;width: 45%;" id="prov1" onchange="showCity1(this)">
+                            <option value="">请选择省份</option>
+                        </select>
+                        <input type="hidden" name="province" id="provName1" />
+                        <select name="" class="form-control email" style="display: inline-block;width: 45%;" id="city1"  onchange="showCountry1(this)">
+                            <option value="">请选择城市</option>
+                        </select>
+                        <input type="hidden" name="city" id="cityName1" />
+                    </div>
+
+
+                    <p align="left">您预计投资的金额（单选）<span style="color: #f20000">*</span></p>
+                    <label style="margin-left: 10%"><input name="money1" type="radio" value="50-70万" />50-70万</label>
+                    <label style="margin-left: 10%"> <input name="money1" type="radio" value="70-100万" />70-100万</label>
+                    <label style="margin-left: 10%"><input name="money1" type="radio" value="100万以上" />100万以上</label>
+                </div>
+                <!--                    <div style="width: 50%;height:100%;float: left">-->
+                <!--                    </div>-->
+
+                <input type="hidden" name="isPc" id="isPc" value="1" />
+                <input type="submit" style="margin-top: 20px; background:#ff363b; width:50%;height:40px;font-size:15px;border-radius:15px;color: #ffffff" value="点击提交获取详细加盟资料" onclick="submitFrom1()"/>
+            </div>
+        </div>
+        <!-- 引入提交 -->
+    </div>
+
+    <img src="http://47.56.105.7:8914/static/chanhou/img/pcchanhoubuttom.jpg" width="75%"/>
+<!--    <div class="footer" onclick="focu()">-->
+<!--        <p style="font-size:25px;color:#f0f0f0;height:50px;line-height: 20px;">点-->
+<!--            &nbsp;击-->
+<!--            &nbsp;获-->
+<!--            &nbsp;取-->
+<!--            &nbsp;详-->
+<!--            &nbsp;细-->
+<!--            &nbsp;加-->
+<!--            &nbsp;盟-->
+<!--            &nbsp;资-->
+<!--            &nbsp;料</p>-->
+<!--    </div>-->
+</div>
+<iframe name="form" id="form" style="display:none"></iframe>
+</body>
+
+
+<script src="http://47.56.105.7/static/assets/js/jquery.min.js"></script>
+<script src="../../../static/lr/js/city.js"></script>
+<script src="../../../static/lr/js/method.js"></script>
+<script src="../../../static/lr/js/method1.js"></script>
+<script>
+
+    function focu() {
+        //document.getElementById("name").focus()
+        document.querySelector("#Table").scrollIntoView();
+    }
+
+    function submitFrom() {
+        var name = $("#name").val();
+        var phone = $("#phone").val();
+        var money = $("input[name='money']:checked").val();
+
+        var provName = $("#provName").val();
+        var cityName = $("#cityName").val();
+        if(name == null || name.length ==0){
+            alert("请输入姓名");return;
+        }
+        if(phone == null || phone.length ==0){
+            alert("请输入手机号");return;
+        }
+        if(money == null || money.length ==0){
+            alert("请选择金额");  return;
+        }
+        if(provName == null || provName.length ==0){
+            alert("请选择省"); return;
+        }
+        if(cityName == null || cityName.length ==0){
+            alert("请选择市"); return;
+        }
+        // alert(name+"\t"+phone+"\t"+money+"\t"+provName+"\t"+cityName)
+        // Ajax提交数据
+        $.ajax({
+            url: "http://47.56.105.7/hr/chanhou/submit",
+            //url: "http://localhost/hr/jianshe02/submit",
+            type: "post",    // 提交方式
+            data: {"name": name, "phone": phone,"isPc":1,"money":money,"provice":provName,"city":cityName},
+            dataType: "json",
+            success: function (data) {
+                if(!(data.indexOf("已经提交过") == -1)){
+
+                    window._agl && window._agl.push(['track', ['success', {t: 3}]])
+                }
+                alert(data);
+            },error(data){
+                if(!(data.responseText.indexOf("已经提交过") == -1)){
+                    window._agl && window._agl.push(['track', ['success', {t: 3}]])
+                }
+
+                alert(data.responseText);
+            }
+        });
+    }
+
+
+    function submitFrom1() {
+        var name = $("#name1").val();
+        var phone = $("#phone1").val();
+        var money = $("input[name='money1']:checked").val();
+
+        var provName = $("#provName1").val();
+        var cityName = $("#cityName1").val();
+        if(name == null || name.length ==0){
+            alert("请输入姓名");return;
+        }
+        if(phone == null || phone.length ==0){
+            alert("请输入手机号");return;
+        }
+        if(money == null || money.length ==0){
+            alert("请选择金额");  return;
+        }
+        if(provName == null || provName.length ==0){
+            alert("请选择省"); return;
+        }
+        if(cityName == null || cityName.length ==0){
+            alert("请选择市"); return;
+        }
+        // alert(name+"\t"+phone+"\t"+money+"\t"+provName+"\t"+cityName)
+        // Ajax提交数据
+        $.ajax({
+            url: "http://47.56.105.7/hr/chanhou/submit",
+            //url: "http://localhost/hr/jianshe02/submit",
+            type: "post",    // 提交方式
+            data: {"name": name, "phone": phone,"isPc":1,"money":money,"provice":provName,"city":cityName},
+            dataType: "json",
+            success: function (data) {
+                if(!(data.indexOf("已经提交过") == -1)){
+
+                    window._agl && window._agl.push(['track', ['success', {t: 3}]])
+                }
+                alert(data);
+            },error(data){
+                if(!(data.responseText.indexOf("已经提交过") == -1)){
+                    window._agl && window._agl.push(['track', ['success', {t: 3}]])
+                }
+
+                alert(data.responseText);
+            }
+        });
+    }
+</script>
+<script href="http://47.56.105.7/static/lr/js/city.js"></script>
+<script href="http://47.56.105.7/static/lr/js/method.js"></script>
+<script href="http://47.56.105.7/static/lr/js/method1.js"></script>
+</html>
