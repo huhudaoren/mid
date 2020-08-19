@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>煌小签旋转小火锅</title>
+
+
+
+</head>
+<style>
+    body{
+        text-align:center;
+    }
+    .inputText{
+        border-left-width:0px;
+        border-top-width:0px;
+        border-right-width:0px;
+        width:60%;
+        height:45px;
+    }
+    input::-webkit-input-placeholder{
+        color: #000;
+    }
+    .footer{
+        position:fixed; /* 使按钮固定于可视窗口的底部  // 设置固定高度*/
+        bottom :0;
+        left :0;
+        right :0;
+        height:60px ;
+        background :orange;
+        width: 35.5%;
+        margin: auto;
+        border-radius:5px;
+    }
+
+</style>
+<body>
+<div id="t" style="padding-bottom: 60px;box-sizing: border-box;min-height: 100%;">
+    <div>
+        <!-- 引入头图片 -->
+        <img src="http://47.56.105.7:8914/static/huoguo/img/heand.jpg" width="60.5%"/>
+    </div>
+    <div>
+        <!-- 引入头图片 -->
+        <img src="http://47.56.105.7:8914/static/huoguo/img/pctop.jpg" width="60.5%"/>
+    </div>
+
+
+
+    <div style="height: 300px;width: 60.5%;margin: auto;text-align:center;background-color:#fff9ff">
+            <div style="width:75%;margin: auto;height: 80%" id="Table">
+
+                <div style="width: 100%;height: 100%">
+
+                    <div style="padding-top: 60px;" >
+                        <span>姓名<span style="color: #f20000">*&nbsp;&nbsp;&nbsp;</span></span>
+                        <input type="text" name="name" id="name" class="inputText" placeholder="姓名" />
+                        <br><br>
+                        <span>手机号<span style="color: #f20000">*</span></span>
+                        <input type="text" name="phone" id="phone" class="inputText" placeholder="手机号" />
+                    </div>
+<!--                    <div style="width: 50%;height:100%;float: left">-->
+<!--                        <div style="padding-top: 20px;" >-->
+<!--                            <p>您所在城市（单选）<span style="color: #f20000">*&nbsp;&nbsp;&nbsp;</span></p>-->
+<!--                                <label><input name="area" type="radio" value="广州" />广州 </label>-->
+<!--                                <label><input name="area" type="radio" value="深圳" />深圳 </label>-->
+<!--                                <label><input name="area" type="radio" value="东莞" />东莞 </label>-->
+<!--                                <label><input name="area" type="radio" value="佛山" />佛山 </label>-->
+<!--                                <label><input name="area" type="radio" value="中山" />中山 </label>-->
+<!--                                <label><input name="area" type="radio" value="珠海" />珠海 </label>-->
+<!--								<label><input name="area" type="radio" value="贵州" />贵州 </label>-->
+<!--                            <br><br>-->
+<!--                            <p>别墅装修设计面积（单选）<span style="color: #f20000">*</span></p>-->
+<!--                                <label><input name="supm" type="radio" value="150-300平方米" />150-300M<sup>2</sup> </label>-->
+<!--                                <label><input name="supm" type="radio" value="300-500平方米" />300-500M<sup>2</sup></label>-->
+<!--                                <label><input name="supm" type="radio" value="500-800平方米" />500-800M<sup>2</sup></label>-->
+<!--                                <label><input name="supm" type="radio" value="800平方米以上" />800M<sup>2</sup>以上</label>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+                    <input type="hidden" name="isPc" id="isPc" value="1" />
+                    <input type="submit" style="margin-top: 20px; background:#5e74ff; width:30%;height:40px;font-size:15px;" value="留言获取加盟资料"  onclick="submitFrom()"/>
+                </div>
+            </div>
+        <!-- 引入提交 -->
+
+    </div>
+
+    <div>
+        <!-- 引入头图片 -->
+        <img src="http://47.56.105.7:8914/static/huoguo/img/pcbuttom.jpg" width="70.5%"/>
+    </div>
+
+    <p>投资有风险，选择需谨慎<br>
+        北京伍壹玖捌科技有限公司<br>
+        地 址：北京市丰台区汽车博物馆东路1号院3号楼27层2706-4（园区）<br>
+        京ICP备17020208号</p>
+    <div class="footer" onclick="focu()">
+        <p style="font-size:25px;color:#f0f0f0;height:50px;line-height: 20px;">点
+            &nbsp;击
+            &nbsp;获
+            &nbsp;取
+            &nbsp;加
+            &nbsp;盟
+            &nbsp;资
+            &nbsp;料</p>
+    </div>
+</div>
+<iframe name="form" id="form" style="display:none"></iframe>
+</body>
+
+<script language="javascript" src="http://byt.zoosnet.net/JS/LsJS.aspx?siteid=BYT41381693&float=1&lng=cn"></script>
+<script src="http://47.56.105.7/static/assets/js/jquery.min.js"></script>
+<script>
+
+    function focu() {
+        //document.getElementById("name").focus()
+        document.querySelector("#Table").scrollIntoView();
+    }
+
+    function submitFrom() {
+        var name = $("#name").val();
+        var phone = $("#phone").val();
+
+        if(name == null || name.length ==0){
+            alert("请输入姓名");return;
+        }
+        if(phone == null || phone.length ==0){
+            alert("请输入手机号");return;
+        }
+
+
+        // Ajax提交数据
+        $.ajax({
+            url: "http://47.56.105.7/hr/huoguo/submit",
+            //url: "http://localhost/hr/jianshe02/submit",
+            type: "post",    // 提交方式
+            data: {"name": name, "phone": phone,"isPc":1},
+            dataType: "json",
+            success: function (data) {
+
+                alert(data);
+            },error(data){
+
+                alert(data.responseText);
+            }
+        });
+    }
+</script>
+</html>
