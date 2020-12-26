@@ -2,6 +2,7 @@ package com.hroa.mid.hr.controller;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.hroa.mid.hr.entity.Jianshe;
 import com.hroa.mid.hr.entity.Record;
 import com.hroa.mid.hr.entity.User;
 import com.hroa.mid.hr.mapper.RecordMapper;
@@ -17,22 +18,52 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping(value = "admin")
 public class UserIndexController {
 
+    private Map<String,String> map = new HashMap();
+
     @Autowired
     private UserMapper userMapper;
     @Autowired
     private RecordMapper recordMapper;
+
+
+
+
+
+    @RequestMapping(value = "toLogin",produces = "application/json; charset=utf-8")
+    @ResponseBody
+    public String toLogin(@RequestParam(value = "userName") String userName, @RequestParam(value = "password") String password){
+        if(StringUtils.isNullBoolean(password) || StringUtils.isNullBoolean(userName)){
+
+            //验证账号
+            return "0";
+        }
+
+        Wrapper wrapper = new QueryWrapper();
+        User user = new User().setUserName(userName).setPassword(password);
+        ((QueryWrapper) wrapper).setEntity(user);
+        if(userMapper.selectList(wrapper).size() > 0){
+            return "1";
+        }
+        //验证账号
+        return "0";
+    }
 
     @RequestMapping(value = "login.html")
     public String loginIndex(){
